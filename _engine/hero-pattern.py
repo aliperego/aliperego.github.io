@@ -12,8 +12,8 @@ import math
 import random
 
 WIDTH, HEIGHT = 1600, 900
-DISC_POINTS = 2200      # faint points of the disc
-BULGE_POINTS = 700      # faint points of the bulge
+DISC_POINTS = 1500      # faint points of the disc
+BULGE_POINTS = 500      # faint points of the bulge
 BRIGHT_POINTS = 60      # brighter resolved sources
 SEED = 20260914
 
@@ -59,7 +59,7 @@ def main():
     print('  <g fill="#ffffff">')
     for px, py, radius, opacity in points:
         if 0 <= px <= WIDTH and 0 <= py <= HEIGHT:
-            print(f'    <circle cx="{px:.1f}" cy="{py:.1f}" r="{radius:.1f}" fill-opacity="{opacity:.2f}"/>')
+            print(f'<circle cx="{px:.0f}" cy="{py:.0f}" r="{radius:.1f}" fill-opacity="{opacity:.2f}"/>')
     print("  </g>")
     print("</svg>")
 
