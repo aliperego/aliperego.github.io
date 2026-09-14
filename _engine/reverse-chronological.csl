@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-GB" page-range-format="expanded">
+  <info>
+    <title>Reverse-chronological publication list</title>
+    <id>https://aliperego.github.io/_engine/reverse-chronological.csl</id>
+    <summary>Publication lists for the website: newest first, bold title, then authors and venue. Links are added by the bibliography shortcode.</summary>
+    <updated>2026-09-14T00:00:00+00:00</updated>
+    <category citation-format="numeric"/>
+  </info>
+  <macro name="title">
+    <text variable="title" font-weight="bold" text-case="title"/>
+  </macro>
+  <macro name="authors">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". " name-as-sort-order="all" sort-separator=", "/>
+      <substitute>
+        <names variable="editor"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="venue">
+    <group delimiter=", ">
+      <text variable="genre"/>
+      <text variable="event-title"/>
+      <group delimiter=" ">
+        <text variable="container-title" font-style="italic"/>
+        <text variable="volume"/>
+      </group>
+      <text variable="page"/>
+      <text variable="publisher"/>
+      <text variable="publisher-place"/>
+    </group>
+  </macro>
+  <macro name="year">
+    <date variable="issued" prefix="(" suffix=")">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <citation>
+    <layout>
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <sort>
+      <key variable="issued" sort="descending"/>
+      <key variable="citation-number"/>
+    </sort>
+    <layout>
+      <text macro="title" display="block"/>
+      <text macro="authors" display="block"/>
+      <group display="block" delimiter=" ">
+        <text macro="venue"/>
+        <text macro="year"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
