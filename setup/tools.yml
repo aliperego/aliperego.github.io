@@ -1,0 +1,61 @@
+# Tools I work with, in display order. Copy a block to add one; delete a block to drop a tool.
+# name is required (a block whose name is still FILL is ignored). description: 1–2 sentences
+# on how you use the tool; leave FILL to get a marked placeholder on the site, to write later.
+# links: add as many as useful, e.g. code, documentation, paper. A link whose url
+# still contains FILL is omitted.
+
+- name: "COSMIC"
+  category: "Binary population synthesis"
+  description: "FILL: how you use it"
+  links:
+    - text: "code"
+      url: "FILL: https://…"
+
+- name: "FILL: white dwarf evolution models (name them)"
+  category: "White dwarf evolution"
+  description: "FILL: how you use them"
+  links:
+    - text: "reference"
+      url: "FILL: https://…"
+
+- name: "FILL: Milky Way models (name them)"
+  category: "Galactic modelling"
+  description: "FILL: how you use them"
+  links:
+    - text: "reference"
+      url: "FILL: https://…"
+
+- name: "FILL: public electromagnetic catalogues (name them)"
+  category: "Electromagnetic catalogues"
+  description: "FILL: how you use them"
+  links:
+    - text: "catalogue"
+      url: "FILL: https://…"
+
+- name: "FILL: LISA analysis tools (name them)"
+  category: "LISA data analysis"
+  description: "FILL: how you use them"
+  links:
+    - text: "code"
+      url: "FILL: https://…"
+
+- name: "GBGPU"
+  category: "LISA data analysis"
+  description: "FILL: how you use it"
+  links:
+    - text: "code"
+      url: "FILL: https://…"
+
+- name: "FILL: name of the iterative foreground estimation procedure"
+  category: "Astrophysical foregrounds"
+  description: "FILL: what it does"
+  links:
+    - text: "paper"
+      url: "FILL: https://…"
+
+- name: "FILL: full name of \"extrapop posynth\""
+  category: "FILL: category"
+  description: "FILL: what it is and how you use it"
+  links:
+    - text: "code"
+      url: "FILL: https://…"

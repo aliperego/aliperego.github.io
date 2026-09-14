@@ -1,0 +1,10 @@
+# Figures for the site. Put the image files in this folder and describe them here.
+# Add only figures you have the right to publish (your own, or with a licence or
+# permission that allows it): a figure is published only if it is listed here with
+# its credit. Image files in this folder that are not listed are ignored.
+
+- file: "FILL: file name, e.g. dwd-population.png"
+  section: "FILL: research-ultra-compact-double-white-dwarfs | research-astrophysical-foregrounds"
+  caption: "FILL: caption"
+  credit: "FILL: source and licence, e.g. Surname et al. 2025, CC BY 4.0"
+  alt: "FILL: short description for screen readers"

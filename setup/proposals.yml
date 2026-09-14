@@ -1,0 +1,22 @@
+# Observing proposals, most recent first. One block per proposal; copy a block to add one.
+# Required per proposal: facility, period, title, role. A block whose required values
+# are still FILL is ignored. Optional lines: delete them, or leave FILL, to keep them off the site.
+# Add only proposals you may make public: this file ends up in the site's git history.
+
+- facility: "CFHT"
+  period: "FILL: semester, e.g. 2026B"
+  instrument: "FILL: optional"
+  title: "FILL: title as submitted"
+  role: "FILL: PI or Co-I"
+  status: "FILL: optional, e.g. Accepted"
+  allocation: "FILL: optional, e.g. 3 nights"
+  links: []
+
+- facility: "ESO"
+  period: "FILL: period, e.g. P114"
+  instrument: "FILL: optional"
+  title: "FILL: title as submitted"
+  role: "FILL: PI or Co-I"
+  status: "FILL: optional, e.g. Accepted"
+  allocation: "FILL: optional, e.g. 12 h"
+  links: []

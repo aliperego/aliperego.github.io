@@ -1,0 +1,43 @@
+# Decisions about the site. The defaults below match what you asked for;
+# change a value only if you want something different.
+
+# Home page sections, top to bottom. Allowed names: nutshell, contact, research,
+# proposals, tools, publications, interests, news (news only if news.yml is filled).
+home_sections:
+  - nutshell            # In a nutshell (with your photo)
+  - contact             # Get in touch: a box with Email, CV and LinkedIn buttons
+  - research
+  - proposals
+  - tools               # Tools I work with
+  - publications        # most recent entries, plus links to the full lists
+  - interests           # Personal interests
+
+# Research themes, in this order. Each can have a text in texts/research-<theme>.md.
+research_themes:
+  - "Ultra-compact double white dwarfs"
+  - "Astrophysical foregrounds"
+
+# "one-page": all sections on the home page, plus Publications and CV pages.
+# "multi-page": short home page; separate Research, Proposals and Tools pages.
+structure: "one-page"
+
+# The CV button opens: "pdf", "page" (HTML CV) or "both".
+cv_button: "pdf"
+
+# Recent publications shown on the home page: a whole number, 0 = only the links to the full lists.
+home_publications: 5
+
+# Proceedings as a separate list.
+separate_proceedings: true
+
+# "light-azure", "deep-azure", or two hex colours for the gradient: ["#3fa7e0", "#2c4f9e"].
+palette: "light-azure"
+
+# Faint decorative pattern behind your name, related to your research.
+hero_pattern: true
+
+# Licence of the site's code (layout, styles, scripts), written into the LICENSE file
+# with your name: "MIT" (default, the usual choice for personal academic sites) or "none"
+# (no LICENSE file, all rights reserved). Your texts, figures and CV are your copyright
+# in either case and are not covered by it.
+code_licence: "MIT"
