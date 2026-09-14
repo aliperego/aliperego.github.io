@@ -935,7 +935,7 @@ p:has(> .button) {
 
 @media (prefers-reduced-motion: no-preference) {
   #header > * {
-    animation: fade-up 0.8s ease both;
+    animation: fade-up 0.8s ease backwards;
   }
 
   .scroll-cue i {
