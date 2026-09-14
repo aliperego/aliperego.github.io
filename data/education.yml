@@ -1,0 +1,45 @@
+# Education, most recent first. Shown on the CV page by {{< list education >}}.
+# Fields: date (required), title (required), details (one line or a list of lines,
+# Markdown allowed), links (optional list of {text, url}). Example:
+#
+# - date: "2023 – Present"
+#   title: "PhD in Astrophysics"
+#   details:
+#     - "[University](https://…), City, Country"
+#     - "Supervisor: Name Surname"
+#   links:
+#     - text: "thesis"
+#       url: "assets/thesis.pdf"
+#
+# After saving this file, also save the page that shows it (cv.qmd), so the preview updates.
+
+- date: "November 2024 – present"
+  title: "Ph.D. in Astrophysics"
+  details:
+    - "Observatoire de la Côte d'Azur - Artemis, Nice, France"
+    - "Thesis title: Enabling multi-messenger detections and science of Galactic binaries with LISA"
+    - "Supervisors: Nelson Christensen, Astrid Lamberts"
+    - "Expected graduation: Autumn 2027"
+
+- date: "October 2022 – October 2024"
+  title: "Master's Degree in Astrophysics and Space Physics"
+  details:
+    - "University of Milano Bicocca, Milan, Italy"
+    - "Final grade: 110/110 cum laude"
+    - "Thesis title: Assessing the performance of future space-based detectors: astrophysical foregrounds and individual sources"
+    - "Supervisors: Alberto Sesana, Matteo Bonetti, Sylvain Marsat"
+
+- date: "March 2024 – July 2024"
+  title: "Research internship"
+  details:
+    - "Laboratoire des 2 infinis (L2IT), Toulouse, France"
+    - "Project title: Performing parameter estimation of massive black holes binaries for future space-based gravitational wave detectors, in the perspective of the project Voyage2050"
+    - "Advisor: Sylvain Marsat"
+
+- date: "October 2019 – September 2022"
+  title: "Bachelor's Degree in Physics"
+  details:
+    - "University of Milano Bicocca, Milan, Italy"
+    - "Final grade: 110/110 cum laude"
+    - "Thesis title: Numerical simulations of oscillating neutron stars"
+    - "Supervisor: Bruno Giacomazzo"

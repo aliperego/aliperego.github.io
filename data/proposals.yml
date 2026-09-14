@@ -1,0 +1,25 @@
+# Observing proposals, most recent first. Shown by {{< proposals >}} on the home page
+# and on the CV page. Fields: facility (required), period (required), title (required),
+# role (required); instrument, status, allocation and links are optional: omit a line
+# to hide it. Example:
+#
+# - facility: "ESO"
+#   period: "P114"
+#   instrument: "X-shooter"
+#   title: "Proposal title"
+#   role: "PI"
+#   status: "Accepted"
+#   allocation: "12 h"
+#   links:
+#     - text: "abstract"
+#       url: "https://…"
+#
+# After saving this file, also save the page that shows it (index.qmd), so the preview updates.
+
+- facility: "CFHT"
+  period: "May 2026"
+  instrument: "Megacam"
+  title: "‘Apapane: Dynamic Sky Across All Scales"
+  role: "co-PI with Damya Souami, Viraja Khatu"
+  status: "Submitted"
+  allocation: "[300-700] nights"

@@ -1,0 +1,26 @@
+# Seasonal schools and specialised training, most recent first.
+# Shown on the CV page by {{< list training >}}.
+# Fields: date (required), title (required), details (one line or a list of lines,
+# Markdown allowed), links (optional list of {text, url}). Example:
+#
+# - date: "October 2025"
+#   title: "LISA School for early-career scientists"
+#   details: "Les Houches, France"
+#
+# After saving this file, also save the page that shows it (cv.qmd), so the preview updates.
+
+- date: "September 2026"
+  title: "MOOC “Reproducible Research II: Practices and tools for managing computations and data”"
+  details: "Online"
+
+- date: "October 2025"
+  title: "LISA School for early-career scientists"
+  details: "Les Houches, France"
+
+- date: "July 2024"
+  title: "MaNiTou Summer School on Gravitational Waves"
+  details: "Toulouse, France"
+
+- date: "September 2023"
+  title: "Masterclass on Big Data within Science and Industry"
+  details: "Milan, Italy"

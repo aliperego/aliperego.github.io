@@ -1,0 +1,91 @@
+# Conferences, workshops and research visits, most recent first.
+# Shown on the CV page by {{< list talks >}}.
+# Fields: date (required), title (required), details (one line or a list of lines,
+# Markdown allowed), links (optional list of {text, url}). Example:
+#
+# - date: "June 2026"
+#   title: "LISA Symposium"
+#   details:
+#     - "College Park, USA"
+#     - "Contributed talk"
+#   links:
+#     - text: "slides"
+#       url: "assets/slides-lisa-symposium-2026.pdf"
+#
+# After saving this file, also save the page that shows it (cv.qmd), so the preview updates.
+
+- date: "July 2026"
+  title: "European Astronomical Society Annual Meeting"
+  details:
+    - "Lausanne, Switzerland"
+    - "Contributed talk"
+
+- date: "June 2026"
+  title: "LISA Symposium"
+  details:
+    - "College Park, USA"
+    - "Contributed talk"
+
+- date: "May 2026"
+  title: "LISA France"
+  details:
+    - "Paris, France"
+    - "Contributed talk"
+
+- date: "November 2025"
+  title: "GW Space 2050 workshop"
+  details:
+    - "Potsdam, Germany"
+    - "Oral presentation"
+
+- date: "July 2025"
+  title: "“Enabling Future Gravitational Wave Astrophysics in the Milli-Hertz Regime” workshop"
+  details:
+    - "Garching, Germany"
+    - "Oral presentation"
+
+- date: "July 2025"
+  title: "Annual meeting of the French Society of Astronomy & Astrophysics"
+  details:
+    - "Toulouse, France"
+    - "Contributed talk – published proceeding: *Preparing for LISA with CFH telescope: Synergies between gravitational waves and electromagnetic observations*"
+
+- date: "June 2025"
+  title: "LISA Distributed Data Processing Center (DDPC) workshop"
+  details:
+    - "Milan, Italy"
+
+- date: "April 2025"
+  title: "LISA Sprint workshop"
+  details:
+    - "Huntsville, USA"
+
+- date: "April 2025"
+  title: "Research visit at Carnegie Mellon University"
+  details:
+    - "Pittsburgh, USA"
+    - "Host: Katelyn Breivik"
+
+- date: "April 2025"
+  title: "Rencontres de Moriond - Gravitation"
+  details:
+    - "La Thuile, Italy"
+    - "Contributed talk – published proceeding: *Assessing the performance of future space-based detectors: astrophysical foregrounds and individual sources*"
+
+- date: "December 2024"
+  title: "LISA Astrophysics Working Group meeting"
+  details:
+    - "Geneva, Switzerland"
+    - "Contributed talk"
+
+- date: "November 2024"
+  title: "LISA Astrophysics Working Group meeting"
+  details:
+    - "Garching, Germany"
+    - "Contributed talk"
+
+- date: "April 2024"
+  title: "GWOSC Gravitational Wave Open Data workshop"
+  details:
+    - "Toulouse, France"
+    - "Mentor at an in-person study hub"

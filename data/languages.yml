@@ -1,0 +1,20 @@
+# Languages. Shown on the CV page by {{< list languages >}}.
+# Fields: label (required, the language), title (required, the level),
+# details (optional: one line or a list of lines, Markdown allowed). Example:
+#
+# - label: "English"
+#   title: "Fluent"
+#   details: "Certification: …"
+#
+# After saving this file, also save the page that shows it (cv.qmd), so the preview updates.
+
+- label: "Italian"
+  title: "Native"
+
+- label: "English"
+  title: "Fluent"
+  details: "Certification: Bbetween English C1 Open Badge awarded by the University of Milano Bicocca"
+
+- label: "French"
+  title: "Intermediate"
+  details: "Certification: French proficiency test B2 awarded by the GoFluent online course"

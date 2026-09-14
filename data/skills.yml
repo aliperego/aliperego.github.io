@@ -1,0 +1,17 @@
+# Software skills. Shown on the CV page by {{< list skills >}}.
+# Fields: label (required, shown on the left instead of a date), title (required),
+# details (optional: one line or a list of lines, Markdown allowed). Example:
+#
+# - label: "Programming"
+#   title: "Python, C++"
+#
+# After saving this file, also save the page that shows it (cv.qmd), so the preview updates.
+
+- label: "Programming"
+  title: "Python, C++"
+
+- label: "Software and codes"
+  title: "Python packages, COSMIC (population synthesis code), VizieR and Aladin (astronomical dataset and tools)"
+
+- label: "Analysis techniques"
+  title: "Frequentist and Bayesian statistical inference"
