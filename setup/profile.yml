@@ -2,19 +2,19 @@
 # Required: name, surname, role, affiliations (at least one name), email, repository.
 # Optional lines: delete them, or leave FILL, to keep them off the site.
 
-name: "FILL: full name as it should appear"
-surname: "FILL: surname, used for the CV file name (e.g. Surname → Surname_CV.pdf)"
-role: "FILL: e.g. PhD Candidate in Astrophysics"
+name: "Alice"
+surname: "Perego"
+role: "PhD student in Astrophysics"
 affiliations:
-  - name: "FILL: Department, University"
-    url: "FILL: https://… (optional)"
-email: "FILL: public email address"
+  - name: "Artemis - Observatoire de la Côte d'Azur"
+    url: "https://www.oca.eu/fr/"
+email: "alice.perego@oca.eu"
 address:                              # optional
-  - "FILL: first line, e.g. Department of Physics"
-  - "FILL: second line, e.g. University, City, Country"
+  - "96 Bd de l'Observatoire"
+  - "06300 Nice, France"
 links:                                # optional, each line independently
-  linkedin: "FILL: https://www.linkedin.com/in/…"
-  orcid: "FILL: 0000-0000-0000-0000 (iD only)"
+  linkedin: "https://www.linkedin.com/in/alice-p-71408439b/"
+  orcid: "0009-0001-0670-2738"
   github: "FILL: GitHub username (only if you want it shown)"
   ads: "FILL: public ADS library or author query URL"
   scholar: "FILL: Google Scholar profile URL"
