@@ -143,6 +143,18 @@ p:has(> .button) {
   }
 }
 
+// Text links on the gradient get an invisible, taller tap area (44px).
+#header .affiliation a,
+#contact a:not(.icon) {
+  position: relative;
+
+  &::after {
+    content: "";
+    inset: -0.5em 0;
+    position: absolute;
+  }
+}
+
 #header {
   align-items: center;
   display: flex;
