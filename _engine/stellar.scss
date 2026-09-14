@@ -1,0 +1,969 @@
+/*-- scss:defaults --*/
+
+// Bootstrap mapping of the settings in custom.scss. The cards are white; the
+// gradient behind them is painted by the body rule below.
+$body-bg: #ffffff;
+$body-color: $text;
+$link-color: $accent;
+$link-hover-color: $gradient-end;
+$font-family-sans-serif: $font-text;
+$font-family-base: $font-text;
+$font-size-base: 1.0625rem;
+$font-weight-base: 400;
+$line-height-base: 1.65;
+$headings-color: $text-strong;
+$headings-font-family: $font-titles;
+$headings-font-weight: 600;
+
+/*-- scss:rules --*/
+
+// Page -----------------------------------------------------------------------
+// Layout adapted from Stellar by HTML5 UP (html5up.net, CC BY 3.0).
+
+html {
+  scroll-padding-top: 4.5em;
+}
+
+body {
+  background-attachment: fixed;
+  background-color: $gradient-end;
+  background-image: url("assets/stellar/overlay.png"), linear-gradient(45deg, $gradient-start 15%, $gradient-end 85%);
+  min-width: 320px;
+}
+
+#quarto-content {
+  margin: 0 auto;
+  max-width: calc(100% - 4em);
+  width: $page-width;
+}
+
+:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  #quarto-content {
+    max-width: calc(100% - 2em);
+  }
+}
+
+@media (max-width: 360px) {
+  #quarto-content {
+    max-width: 100%;
+  }
+}
+
+// Buttons --------------------------------------------------------------------
+
+.button {
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px $line;
+  color: $text-strong !important;
+  display: inline-block;
+  font-weight: 600;
+  height: 2.75em;
+  line-height: 2.75em;
+  min-width: 9.25em;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, filter 0.2s ease-in-out;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $light-background;
+  }
+
+  &.primary {
+    background-color: $accent;
+    box-shadow: none;
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: $accent;
+      filter: brightness(0.92);
+    }
+  }
+
+  &.small {
+    font-size: 0.8em;
+    min-width: 0;
+    padding: 0 1.1em;
+  }
+}
+
+// A paragraph of buttons is a button row.
+p:has(> .button) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.special p:has(> .button) {
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  p:has(> .button) {
+    flex-direction: column;
+
+    .button {
+      width: 100%;
+    }
+  }
+}
+
+// Header ---------------------------------------------------------------------
+
+// Home page header and the title block of the other pages: white text on the gradient.
+#header,
+#title-block-header {
+  color: rgba(255, 255, 255, 0.92);
+  padding: 4em 0 3em;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    color: #ffffff;
+    font-size: 3.25em;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin: 0 0 0.25em;
+  }
+
+  a:not(.button) {
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+#header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 92vh;
+  min-height: 92svh;
+
+  // Decorative pattern behind the name, faded at the edges.
+  &::before {
+    background: url("assets/hero-pattern.svg") center / cover no-repeat;
+    content: "";
+    inset: 0;
+    -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent);
+    mask-image: radial-gradient(closest-side, #000 55%, transparent);
+    opacity: $hero-pattern-opacity;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  > * {
+    position: relative;
+  }
+
+  .role,
+  .affiliation,
+  .tagline {
+    font-size: 1.25em;
+    letter-spacing: -0.025em;
+  }
+
+  .tagline {
+    margin: 0.75em auto 0;
+    max-width: 36em;
+  }
+
+  p:has(> .button) {
+    justify-content: center;
+    margin: 2em 0 0;
+  }
+
+  .button {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.primary {
+      background-color: #ffffff;
+      box-shadow: none;
+      color: $accent !important;
+
+      &:hover {
+        background-color: #ffffff;
+        filter: brightness(0.95);
+      }
+    }
+  }
+
+  .icons {
+    margin-top: 1.5em;
+  }
+}
+
+.scroll-cue {
+  border-bottom: 0 !important;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5em;
+  line-height: 1;
+  margin-top: 1.5em;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5em;
+}
+
+#title-block-header {
+  padding: 5em 0 3em;
+
+  .subtitle {
+    font-size: 1.25em;
+    letter-spacing: -0.025em;
+    margin: 0;
+  }
+
+  .description,
+  .quarto-title-meta {
+    display: none;
+  }
+}
+
+// Round icon links (header and footer).
+.icons ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65em;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom-width: 1px !important;
+  border-radius: 100%;
+  color: #ffffff !important;
+  display: inline-flex;
+  font-size: 1.15em;
+  height: 2.5em;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  width: 2.5em;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.orcid-id {
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 736px) {
+  #header,
+  #title-block-header {
+    padding: 3em 0 2em;
+
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+
+  #header {
+    min-height: 88vh;
+    min-height: 88svh;
+
+    .role,
+    .affiliation,
+    .tagline {
+      font-size: 1.05em;
+      letter-spacing: 0;
+    }
+  }
+}
+
+// Navigation -----------------------------------------------------------------
+
+.nav-sentinel {
+  height: 1px;
+  margin-top: -1px;
+}
+
+#nav {
+  background-color: $light-background;
+  border-radius: 0.25em 0.25em 0 0;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  transition: background-color 0.2s ease, border-radius 0.2s ease, box-shadow 0.2s ease, padding 0.2s ease;
+  z-index: 100;
+
+  ul {
+    display: flex;
+    gap: 0.35em;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  li {
+    flex-shrink: 0;
+  }
+
+  a {
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px transparent;
+    color: $text;
+    display: inline-block;
+    height: 2.75em;
+    line-height: 2.75em;
+    min-height: 44px;
+    padding: 0 1.1em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, font-size 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &.active {
+      background-color: #ffffff;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+      color: $text-strong;
+    }
+  }
+
+  // The CV entry and its PDF icon form one pill split by a thin line.
+  .nav-cv {
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px $line;
+    display: inline-flex;
+
+    a:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+
+    .nav-pdf {
+      border-left: 1px solid $line;
+      border-radius: 0 8px 8px 0;
+      padding: 0 0.8em;
+    }
+  }
+
+  // Compact while stuck.
+  &.alt {
+    background-color: rgba($light-background, 0.96);
+    border-radius: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    padding: 0.5em 1em;
+
+    a {
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media (max-width: 736px) {
+  #nav {
+    padding: 0.75em 0;
+
+    ul {
+      justify-content: flex-start;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 1.5em, #000 calc(100% - 1.5em), transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 1.5em, #000 calc(100% - 1.5em), transparent);
+      overflow-x: auto;
+      padding: 0 1.5em;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &.alt {
+      padding: 0.5em 0;
+    }
+  }
+}
+
+// Cards ----------------------------------------------------------------------
+
+#main {
+  background-color: #ffffff;
+  border-radius: 0 0 0.25em 0.25em;
+  color: $text;
+
+  > .main {
+    border-top: 1px solid $line;
+    padding: 4em;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  > .special {
+    text-align: center;
+  }
+
+  &.compact > .main {
+    padding: 2.5em 4em;
+  }
+}
+
+.main.intro > p:first-child:has(> .button) {
+  margin-bottom: 1em;
+}
+
+.main h2 {
+  border-bottom: 0;
+  font-size: 2em;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  margin: 0 0 0.6em;
+  padding-bottom: 0;
+
+  // Stellar's short gradient underline.
+  &::after {
+    background: linear-gradient(90deg, $accent, $accent-light);
+    border-radius: 2px;
+    content: "";
+    display: block;
+    height: 2px;
+    margin: 0.5em 0 0;
+    width: 3.25em;
+  }
+}
+
+.special h2::after,
+.spotlight-card h2::after {
+  margin-left: 0;
+}
+
+.special h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main h3 {
+  font-size: 1.35em;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.5em;
+}
+
+@media (max-width: 980px) {
+  #main {
+    > .main,
+    &.compact > .main {
+      padding: 3em;
+    }
+  }
+}
+
+@media (max-width: 736px) {
+  #main {
+    > .main,
+    &.compact > .main {
+      padding: 2.5em 1.5em;
+    }
+  }
+
+  .main h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 360px) {
+  #main {
+    border-radius: 0;
+
+    > .main,
+    &.compact > .main {
+      padding: 2em 1em;
+    }
+  }
+}
+
+// Card content ---------------------------------------------------------------
+
+// Spotlight: text beside a round picture.
+.spotlight {
+  align-items: center;
+  display: flex;
+  gap: 4em;
+
+  .content {
+    flex: 1;
+    min-width: 0;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .image {
+    border: 1px solid $line;
+    border-radius: 100%;
+    flex: 0 0 auto;
+    padding: 0.65em;
+
+    img {
+      border-radius: 100%;
+      display: block;
+      height: auto;
+      width: 16em;
+    }
+  }
+
+  // The facts list next to the picture: thin separators.
+  .content > ul {
+    list-style: none;
+    margin: 0 0 1.5em;
+    padding: 0;
+
+    li {
+      border-top: 1px solid $line;
+      padding: 0.5em 0;
+
+      &:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+// Two columns, split at each "###".
+.two-columns {
+  display: grid;
+  gap: 1em 3em;
+  grid-template-columns: 1fr 1fr;
+
+  .half > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Highlighted box.
+.box {
+  background-color: $light-background;
+  border: 1px solid $line;
+  border-radius: 8px;
+  margin: 0 0 1.5em;
+  padding: 1.5em;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// A list shown as tags.
+.tags ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  list-style: none;
+  margin: 0 0 1.5em;
+  padding: 0;
+
+  li {
+    background-color: $light-background;
+    border: 1px solid $line;
+    border-radius: 999px;
+    font-size: 0.9em;
+    padding: 0.2em 0.9em;
+  }
+}
+
+.special .tags ul {
+  justify-content: center;
+}
+
+// A list with thin separators ("::: alt", also used by the footer).
+.main .alt > ul,
+#contact .alt > ul {
+  list-style: none;
+  margin: 0 0 1.5em;
+  padding: 0;
+
+  li {
+    border-top: 1px solid $line;
+    padding: 0.5em 0;
+
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+// Tool cards: a grid with large round icons, and buttons on one baseline.
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  margin: 0 0 1.5em;
+
+  .tool {
+    display: flex;
+    flex: 1 1 15em;
+    flex-direction: column;
+    max-width: 22em;
+    text-align: center;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .icon.major {
+    align-self: center;
+  }
+
+  .tool-links {
+    margin-top: auto;
+    padding-top: 1em;
+  }
+
+  .tool-category {
+    color: $text-muted;
+    font-size: 0.9em;
+    margin: -0.25em 0 0.75em;
+  }
+
+  h3 {
+    margin-bottom: 0.25em;
+  }
+}
+
+.icon.major {
+  border: 1px solid $line;
+  border-radius: 100%;
+  color: $accent !important;
+  display: inline-block;
+  height: auto;
+  margin: 0 0 1.25em;
+  padding: 0.5em;
+  width: auto;
+
+  i {
+    align-items: center;
+    border: 1px solid $line;
+    border-radius: 100%;
+    display: flex;
+    font-size: 1.75em;
+    height: 2.6em;
+    justify-content: center;
+    width: 2.6em;
+  }
+}
+
+// News cards.
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  margin: 0 0 1.5em;
+
+  .news-item {
+    display: flex;
+    flex: 1 1 15em;
+    flex-direction: column;
+    max-width: 22em;
+    text-align: center;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .icon.major {
+    align-self: center;
+  }
+
+  .news-date {
+    color: $text-muted;
+    font-size: 0.9em;
+  }
+
+  .news-links {
+    margin-top: auto;
+    padding-top: 1em;
+  }
+}
+
+@media (max-width: 980px) {
+  .spotlight {
+    flex-direction: column-reverse;
+    gap: 2em;
+
+    .content {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+
+      &::after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 736px) {
+  .spotlight .image {
+    padding: 0.35em;
+
+    img {
+      width: 12em;
+    }
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  // Small buttons become full-size on phones (tap targets).
+  .button.small {
+    font-size: 1em;
+    padding: 0 1.25em;
+  }
+}
+
+// Lists ----------------------------------------------------------------------
+
+// Dated entries: label on the left, body on the right.
+.entries {
+  margin: 0 0 1.5em;
+}
+
+.entry {
+  border-top: 1px solid $line;
+  display: grid;
+  gap: 0.25em 2em;
+  grid-template-columns: 11em 1fr;
+  padding: 1em 0;
+
+  &:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.entry-label {
+  color: $text-muted;
+  font-size: 0.95em;
+  line-height: 1.5;
+  padding-top: 0.1em;
+}
+
+.entry-title {
+  color: $text-strong;
+  font-weight: 600;
+}
+
+.entry-detail {
+  margin-top: 0.15em;
+}
+
+.entry-links,
+.pub-links {
+  margin-top: 0.75em;
+}
+
+// Publications, from the bibliography shortcode.
+.bibliography {
+  margin: 0 0 1.5em;
+}
+
+.csl-entry {
+  border-top: 1px solid $line;
+  padding: 1em 0;
+
+  &:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  strong {
+    color: $text-strong;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 576px) {
+  .entry {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .entry-label {
+    margin-bottom: 0.15em;
+  }
+}
+
+// Footer ---------------------------------------------------------------------
+
+#contact {
+  color: rgba(255, 255, 255, 0.92);
+  display: grid;
+  gap: 2em 3em;
+  grid-template-columns: 1fr 1fr;
+  padding: 4em 4em 2em;
+
+  h2 {
+    color: #ffffff;
+    font-size: 1.5em;
+    letter-spacing: -0.025em;
+    margin: 0 0 0.75em;
+  }
+
+  a {
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+
+  dl {
+    margin: 0 0 1.5em;
+  }
+
+  dt {
+    color: #ffffff;
+    float: left;
+    font-weight: 600;
+    width: 5.5em;
+  }
+
+  dd {
+    margin: 0 0 0.75em 5.5em;
+  }
+
+  .icons ul {
+    justify-content: flex-start;
+  }
+
+  .alt li {
+    border-top-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .pdf-link {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1.6;
+    margin-left: 0.5em;
+    padding: 0 0.7em;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85em;
+    grid-column: 1 / -1;
+    padding-top: 1.5em;
+    text-align: center;
+  }
+}
+
+@media (max-width: 736px) {
+  #contact {
+    grid-template-columns: 1fr;
+    padding: 3em 1.5em 1.5em;
+
+    .copyright {
+      text-align: left;
+    }
+  }
+}
+
+// Motion ---------------------------------------------------------------------
+
+@media (prefers-reduced-motion: no-preference) {
+  #header > * {
+    animation: fade-up 0.8s ease both;
+  }
+
+  .scroll-cue i {
+    animation: bounce 2s ease-in-out infinite;
+    display: inline-block;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.3em);
+  }
+}
+
+// Touch ----------------------------------------------------------------------
+
+@media (pointer: coarse) {
+  .button:hover,
+  #nav a:hover {
+    background-color: transparent;
+  }
+
+  .button.primary:hover {
+    filter: none;
+  }
+}

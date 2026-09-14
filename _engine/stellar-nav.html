@@ -1,0 +1,91 @@
+<script>
+// Navigation behaviour: active entry, compact style while stuck, and horizontal
+// scrolling on narrow screens. No dependencies.
+(function () {
+  "use strict";
+  var nav = document.getElementById("nav");
+  if (!nav) {
+    return;
+  }
+  var links = Array.prototype.slice.call(nav.querySelectorAll("a[href]"));
+  var list = nav.querySelector("ul");
+  var isHome = document.getElementById("header") !== null;
+  var here = location.pathname.replace(/index\.html$/, "");
+
+  function pageOf(link) {
+    return link.pathname.replace(/index\.html$/, "");
+  }
+
+  // Scroll the horizontal list so that the entry is visible.
+  function reveal(link) {
+    if (!list || list.scrollWidth <= list.clientWidth) {
+      return;
+    }
+    var item = link.closest("li") || link;
+    list.scrollTo({ left: item.offsetLeft - (list.clientWidth - item.offsetWidth) / 2, behavior: "smooth" });
+  }
+
+  function activate(link) {
+    links.forEach(function (other) {
+      other.classList.remove("active");
+    });
+    if (link) {
+      link.classList.add("active");
+      reveal(link);
+    }
+  }
+
+  // Current page, and same-page anchors that must not reload the home page.
+  var current = null;
+  links.forEach(function (link) {
+    if (pageOf(link) !== here || link.classList.contains("nav-pdf")) {
+      return;
+    }
+    if (link.hash) {
+      if (isHome) {
+        link.setAttribute("href", link.hash);
+      }
+    } else {
+      link.setAttribute("aria-current", "page");
+      current = link;
+    }
+  });
+  if (current) {
+    activate(current);
+  }
+
+  // On the home page, highlight the section around the middle of the viewport.
+  if (isHome && "IntersectionObserver" in window) {
+    var byId = {};
+    links.forEach(function (link) {
+      if (link.hash) {
+        byId[link.hash.slice(1)] = link;
+      }
+    });
+    var sections = Array.prototype.slice.call(document.querySelectorAll("#main > .main")).filter(function (section) {
+      return byId[section.id];
+    });
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          activate(byId[entry.target.id]);
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    sections.forEach(function (section) {
+      watcher.observe(section);
+    });
+  }
+
+  // Compact style while the bar is stuck: a 1px sentinel just before it.
+  if ("IntersectionObserver" in window) {
+    var sentinel = document.createElement("div");
+    sentinel.className = "nav-sentinel";
+    nav.parentNode.insertBefore(sentinel, nav);
+    new IntersectionObserver(function (entries) {
+      var entry = entries[0];
+      nav.classList.toggle("alt", !entry.isIntersecting && entry.boundingClientRect.top < 0);
+    }).observe(sentinel);
+  }
+})();
+</script>
