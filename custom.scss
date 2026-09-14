@@ -30,7 +30,9 @@ $light-background: #f5f7fa;
 // Maximum width of the content.
 $page-width: 64em;
 
-// Visibility of the decorative pattern behind the name (0 hides it, 1 is fully opaque).
+// Picture behind the name on the home page: an SVG or a PNG/JPEG in assets/, drawn to
+// cover the header and faded at the edges. Its visibility goes from 0 (hidden) to 1 (opaque).
+$hero-pattern-image: "assets/hero-pattern.svg";
 $hero-pattern-opacity: 0.12;
 
 /*-- scss:rules --*/

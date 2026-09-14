@@ -165,7 +165,7 @@ p:has(> .button) {
 
   // Decorative pattern behind the name, faded at the edges.
   &::before {
-    background: url("assets/hero-pattern.svg") center / cover no-repeat;
+    background: url("#{$hero-pattern-image}") center / cover no-repeat;
     content: "";
     inset: 0;
     -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent);
