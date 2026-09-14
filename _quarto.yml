@@ -1,6 +1,6 @@
 project:
   type: website
-  render:                      # explicit: nothing else is rendered (setup/, README, documents)
+  render:                      # explicit: only these pages are rendered
     - index.qmd
     - publications.qmd
     - cv.qmd
