@@ -1,0 +1,9 @@
+# Quarto
+/.quarto/
+/_site/
+**/*.quarto_ipynb
+
+# Local tooling (project settings in .claude/settings.json stay tracked)
+.claude/*
+!.claude/settings.json
+.DS_Store
