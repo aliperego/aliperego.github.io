@@ -1,7 +1,0 @@
-# Optional news for the home page, newest first. Leave the FILL entry to have no News section.
-
-- date: "FILL: e.g. June 2026"
-  title: "FILL: a few words"
-  text: "FILL: one or two sentences"
-  link: "FILL: optional URL"
-  icon: "megaphone"    # name from https://icons.getbootstrap.com
