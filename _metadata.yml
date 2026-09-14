@@ -1,0 +1,36 @@
+# Personal details, CV file and navigation menu, shared by every page.
+# Everything here is written once: header, contact box, footer and CV page read it.
+# Remove an optional line (address, linkedin, orcid, github, ads, scholar) to hide it everywhere.
+
+person:
+  name: "Alice Perego"
+  role: "PhD student in Astrophysics"
+  affiliation: "[Artemis - Observatoire de la Côte d'Azur](https://www.oca.eu/fr/)"
+  email: "alice.perego@oca.eu"
+  address:
+    - "96 Bd de l'Observatoire"
+    - "06300 Nice, France"
+  linkedin: "https://www.linkedin.com/in/alice-p-71408439b/"
+  orcid: "0009-0001-0670-2738"
+
+# The downloadable CV. Keep the file name when you replace the file; update the date.
+cv:
+  pdf: "assets/Perego_CV.pdf"
+  updated: "September 2026"
+
+# Navigation bar, left to right. The footer lists the entries that point to pages
+# (links without "#"). "download: true" attaches the CV PDF to that entry.
+site-menu:
+  - text: "In a nutshell"
+    link: "index.qmd#in-a-nutshell"
+  - text: "Research"
+    link: "index.qmd#research"
+  - text: "Proposals"
+    link: "index.qmd#proposals"
+  - text: "Tools"
+    link: "index.qmd#tools-i-work-with"
+  - text: "Publications"
+    link: "publications.qmd"
+  - text: "CV"
+    link: "cv.qmd"
+    download: true

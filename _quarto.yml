@@ -1,0 +1,41 @@
+project:
+  type: website
+  render:                      # explicit: nothing else is rendered (setup/, README, documents)
+    - index.qmd
+    - publications.qmd
+    - cv.qmd
+    - 404.qmd
+  resources:                   # files linked from the pages are copied automatically;
+    - assets/Perego_CV.pdf     # the CV is declared explicitly: its URL must never change
+    - assets/fonts/LICENSE-SourceSans3.md
+    - assets/fonts/LICENSE-SourceSerif4.md
+    - assets/stellar/LICENSE.txt
+
+website:
+  title: "Alice Perego"
+  description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur."
+  site-url: "https://aliperego.github.io"
+  favicon: assets/favicon.svg
+  search: false
+  open-graph:
+    image: assets/photo.jpg
+    description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur."
+  twitter-card:
+    card-style: summary
+
+format:
+  html:
+    theme: [default, _engine/stellar.scss, custom.scss]   # keep this order: custom.scss defines the settings
+    page-layout: custom
+    section-divs: false
+    toc: false
+    anchor-sections: false
+    smooth-scroll: true
+    include-after-body: _engine/stellar-nav.html
+
+shortcodes:
+  - _engine/shortcodes.lua
+
+filters:
+  - quarto
+  - _engine/layout.lua
