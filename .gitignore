@@ -7,3 +7,6 @@
 .claude/*
 !.claude/settings.json
 .DS_Store
+
+# local inputs for future imports; see PROMPT.md §0.D
+setup/
