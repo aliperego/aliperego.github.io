@@ -14,7 +14,7 @@ The site is built with [Quarto](https://quarto.org) and deployed by GitHub Actio
 | `_metadata.yml`      | Personal details, CV file and navigation menu                   |
 | `_quarto.yml`        | Site configuration                                             |
 | `custom.scss`        | Colours, fonts and sizes                                       |
-| `data/`              | Proposals, tools and CV entries (YAML)                         |
+| `data/`              | Proposals and CV entries (YAML)                                |
 | `assets/`            | CV PDF, photo, favicon, header pattern, fonts, Stellar files   |
 | `_engine/`           | Layout filter, shortcodes, bibliography style, styles and scripts |
 | `.github/`           | Publishing workflow and Dependabot configuration               |

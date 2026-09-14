@@ -4,9 +4,9 @@ How to change any part of the site by editing text files. No HTML, CSS or progra
 
 > **Maintained by Claude Code.** This guide must describe the repository exactly as it is. Claude updates it in the same commit as any structural change. If you notice a mismatch, ask Claude to fix the guide.
 >
-> Last reviewed: 14 September 2026, against the first build (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
+> Last reviewed: 14 September 2026, after the retirement of `setup/` and the first edits (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
 
-**In short:** personal details in `_metadata.yml`, texts in the `.qmd` pages, lists (proposals, tools, CV entries) in `data/`, publications in `publications.bib` and `proceedings.bib`, colours and fonts in `custom.scss`. Never edit `_engine/`.
+**In short:** personal details in `_metadata.yml`, texts in the `.qmd` pages, CV entries (and the proposals' facts) in `data/`, publications in `publications.bib` and `proceedings.bib`, colours and fonts in `custom.scss`. Never edit `_engine/`.
 
 ## Contents
 
@@ -56,15 +56,16 @@ The site opens in the browser and reloads when you save a `.qmd` page, `_metadat
 | Navigation entries (and footer page list)               | `_metadata.yml` → `site-menu`            |
 | Tagline under the name                                  | `index.qmd`, front matter → `hero.tagline` |
 | In a nutshell, Get in touch box, Research, Personal interests | `index.qmd`                        |
-| Proposals (home page and CV page)                       | `data/proposals.yml`                     |
-| Tools                                                   | `data/tools.yml`                         |
+| Proposals: descriptions on the home page                | `index.qmd`                              |
+| Proposals: facility, role, status (CV page)             | `data/proposals.yml`                     |
+| Tools I work with                                       | `index.qmd`                              |
 | Refereed papers and preprints                           | `publications.bib`                       |
 | Proceedings                                             | `proceedings.bib`                        |
 | Education, conferences, training, skills, languages     | `data/education.yml`, `data/talks.yml`, `data/training.yml`, `data/skills.yml`, `data/languages.yml` |
 | Membership list                                         | `cv.qmd`                                 |
 | Photo                                                   | `assets/photo.jpg` (replace the file)     |
 | CV PDF and its "Last updated" date                      | `assets/Perego_CV.pdf`, `_metadata.yml` → `cv` |
-| Colours, page width, header pattern                     | `custom.scss`                            |
+| Colours, page width, home page background picture       | `custom.scss`                            |
 | Fonts                                                   | `assets/fonts/` and the `@font-face` blocks in `custom.scss` |
 | Browser tab title, search description, preview image    | `_quarto.yml` → `website`                |
 | Browser tab icon                                        | `assets/favicon.svg`                     |
@@ -72,7 +73,7 @@ The site opens in the browser and reloads when you save a `.qmd` page, `_metadat
 
 Do not edit `_engine/` (layout code), `_site/` or `.quarto/` (generated).
 
-`setup/` held the inputs for the first build and is removed from the repository after the import: its content lives in the files above. To import new material in bulk (for example a new CV with many changes), put it in a new `setup/` folder and ask Claude. It imports the material and removes the folder again with dedicated commits.
+`setup/` held the inputs for the first build and was removed from the repository after the import: its content lives in the files above. To import new material in bulk (for example a new CV with many changes), put it in a new `setup/` folder and ask Claude. It imports the material and removes the folder again with dedicated commits.
 
 ---
 
@@ -215,7 +216,7 @@ Links on the same line form a row of buttons (stacked on phones). `.primary` is 
 | Line in a page                                   | Shows                                       |
 | ------------------------------------------------ | ------------------------------------------- |
 | `{{< proposals >}}`                              | `data/proposals.yml`                        |
-| `{{< tools >}}`                                  | `data/tools.yml`                            |
+| `{{< tools >}}`                                  | `data/tools.yml` as a grid of cards, if you create that file (see [Tools](#9-tools)) |
 | `{{< list talks >}}`                             | `data/talks.yml` (any `data/NAME.yml` with dated entries) |
 | `{{< news >}}`                                   | `data/news.yml`, once that file exists (see [Adding a section](#14-adding-a-section-or-a-page)) |
 | `{{< bibliography publications.bib >}}`          | all entries, newest first                   |
@@ -233,20 +234,20 @@ File: `index.qmd`. Current order:
 | In a nutshell       | text, list of key facts and tags of scientific interests in `index.qmd` |
 | Get in touch        | short text and buttons (Email, CV, LinkedIn) in `index.qmd`, section `## Get in touch {.special}`; the header's "Get in touch" button scrolls here |
 | Research            | one `###` block per theme in `index.qmd`, inside `::: two-columns`     |
-| Proposals           | `{{< proposals >}}` → `data/proposals.yml`                            |
-| Tools I work with   | `{{< tools >}}` → `data/tools.yml`                                    |
+| Proposals           | one `###` block per proposal in `index.qmd`, with a description        |
+| Tools I work with   | one `###` block per tool in `index.qmd`, inside `::: two-columns`      |
 | Publications and proceedings | `{{< bibliography publications.bib limit=5 >}}` and buttons to the full lists on `publications.qmd` |
 | Personal interests  | text in `index.qmd`                                                   |
 
 **Adding a research theme:** add a `###` block inside the Research section. With two themes they sit side by side in `::: two-columns`; with three or more, remove the `::: two-columns` wrapper and stack the blocks. Figures go in `assets/figures/` and are included with `![Caption. Credit: …](assets/figures/figure.png){fig-alt="Short description"}`.
 
-**Introductions:** a paragraph between `## Proposals` (or `## Tools I work with`) and the `{{< … >}}` line is shown above the list.
+**Adding a proposal or a tool** on the home page: add a `###` block with the title and a paragraph, like the existing ones (for tools, inside the `::: two-columns` block; with three or more tools, remove that wrapper and stack the blocks). A proposal's facility, role, status and allocation belong in `data/proposals.yml`, which the CV page lists.
 
 ---
 
 ## 8. Proposals
 
-File: `data/proposals.yml`, most recent first. Shown on the home page and on the CV page.
+The home page describes each proposal in prose (`index.qmd`, section `## Proposals`). The factual list is on the CV page, from `data/proposals.yml`, most recent first:
 
 ```yaml
 - facility: "CFHT"
@@ -267,7 +268,9 @@ File: `data/proposals.yml`, most recent first. Shown on the home page and on the
 
 ## 9. Tools
 
-File: `data/tools.yml`. Shown as cards in file order.
+The home page describes each tool in prose (`index.qmd`, section `## Tools I work with`): a `###` heading with the name, a line with the category, then the text.
+
+A grid of cards is also available: create `data/tools.yml` and replace the blocks with the line `{{< tools >}}`.
 
 ```yaml
 - name: "GBGPU"
@@ -281,7 +284,7 @@ File: `data/tools.yml`. Shown as cards in file order.
   icon: "cpu"
 ```
 
-`category`, `links` and `icon` are optional (`icon` defaults to `cpu`). Icon names: <https://icons.getbootstrap.com> (omit the `bi-` prefix). The two current descriptions are placeholders (see [Placeholders](#17-placeholders-still-to-write)).
+`category`, `links` and `icon` are optional (`icon` defaults to `cpu`). Icon names: <https://icons.getbootstrap.com> (omit the `bi-` prefix).
 
 ---
 
@@ -384,11 +387,24 @@ The footer's contact block is built from `person`. The HTML5 UP attribution line
 | `$line`, `$light-background`              | separators, navigation bar, highlighted boxes, tags  |
 | `$font-titles`, `$font-text`              | fonts of titles and text                             |
 | `$page-width`                             | maximum content width                                |
-| `$hero-pattern-opacity`                   | visibility of the header pattern (0 hides it)        |
+| `$hero-pattern-image`, `$hero-pattern-opacity` | picture behind the name on the home page, and its visibility (0 hides it) |
 
 - **Colours** are hex codes. Check text contrast (≥ 4.5:1) with <https://webaim.org/resources/contrastchecker/>; the header text is white, so keep `$gradient-start` dark enough.
 - **Fonts** are self-hosted (no request to Google at run time): Source Serif 4 for titles and Source Sans 3 for text, in `assets/fonts/` with their licences. To change one: download its woff2 file(s) and licence (from the font's repository, or from Google Fonts through a tool such as google-webfonts-helper), put them in `assets/fonts/`, update the corresponding `@font-face` blocks at the bottom of `custom.scss`, and set `$font-titles` or `$font-text` to the new family name.
-- **Header pattern:** replace `assets/hero-pattern.svg`, set `$hero-pattern-opacity: 0` to hide it, or regenerate it (after editing the parameters at the top of the script) with `python3 _engine/hero-pattern.py > assets/hero-pattern.svg`.
+
+### Home page background
+
+The header of the home page is the gradient (`$gradient-start`, `$gradient-end`), Stellar's grainy texture (`assets/stellar/overlay.png`, also behind the footer) and, behind the name, a faint picture. The picture is drawn to cover the whole header, centred, and faded towards the edges.
+
+- **Use your own picture:** put an SVG, PNG or JPEG in `assets/` (under ~200 KB) and point `$hero-pattern-image` to it, for example `"assets/header-background.jpg"`. It is published with the site. Then set `$hero-pattern-opacity` (0.1–0.2 keeps a light pattern faint; a photograph may need 0.3–0.5). Save `custom.scss` and check in the preview that the white text stays readable.
+- **Hide it:** `$hero-pattern-opacity: 0`.
+- **Regenerate the default pattern** (a scatter of points evoking the Galactic double white dwarfs): edit the parameters at the top of `_engine/hero-pattern.py` (number of points, seed) and run:
+
+  ```bash
+  python3 _engine/hero-pattern.py > assets/hero-pattern.svg
+  ```
+
+- **Change the texture:** replace `assets/stellar/overlay.png` with another small tiling PNG, keeping the name.
 
 ---
 
