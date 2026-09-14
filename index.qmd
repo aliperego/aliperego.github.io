@@ -1,0 +1,73 @@
+---
+description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur."
+hero:
+  # [[TO WRITE: tagline under the name — ~15 words]]
+  tagline: "*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.*"
+---
+
+## In a nutshell {.spotlight image="assets/photo.jpg" alt="Portrait of Alice Perego"}
+
+<!-- [[TO WRITE: In a nutshell — ~120–150 words]] -->
+
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum.*
+
+- Ph.D. student at Observatoire de la Côte d'Azur - Artemis, Nice, France, since November 2024
+- Supervisors: Nelson Christensen, Astrid Lamberts
+- Thesis: Enabling multi-messenger detections and science of Galactic binaries with LISA
+
+::: tags
+- LISA mission
+- Ultra-compact double white dwarfs
+- Multi-messenger astrophysics
+- Photometric and spectroscopic surveys
+- LISA data analysis
+- Stellar binary evolution
+- Milky Way
+- Gravitational wave backgrounds
+- Massive black hole binaries
+- Extreme mass-ratio inspirals
+:::
+
+## Get in touch {.special}
+
+<!-- [[TO WRITE: Get in touch — ~30 words]] -->
+
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.*
+
+[Email](mailto:{{< meta person.email >}}){.button .primary} [CV]({{< meta cv.pdf >}}){.button} [LinkedIn]({{< meta person.linkedin >}}){.button}
+
+## Research
+
+::: two-columns
+### Ultra-compact double white dwarfs
+
+<!-- [[TO WRITE: Ultra-compact double white dwarfs — ~150 words]] -->
+
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.*
+
+### Astrophysical foregrounds
+
+<!-- [[TO WRITE: Astrophysical foregrounds — ~150 words]] -->
+
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.*
+:::
+
+## Proposals
+
+{{< proposals >}}
+
+## Tools I work with
+
+{{< tools >}}
+
+## Publications and proceedings
+
+{{< bibliography publications.bib limit=5 >}}
+
+[All publications](publications.qmd){.button .primary} [Proceedings](publications.qmd#proceedings){.button}
+
+## Personal interests
+
+<!-- [[TO WRITE: Personal interests — ~60–100 words]] -->
+
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.*

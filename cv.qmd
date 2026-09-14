@@ -1,0 +1,43 @@
+---
+title: "Curriculum vitae"
+subtitle: "PhD student in Astrophysics"
+description: "Curriculum vitae of Alice Perego: education, conferences, training, proposals, skills and languages."
+compact-sections: true
+---
+
+[Download CV (PDF)]({{< meta cv.pdf >}}){.button .primary}
+
+Last updated: {{< meta cv.updated >}}
+
+## Education
+
+{{< list education >}}
+
+## Conferences, workshops and research visits
+
+{{< list talks >}}
+
+## Seasonal schools and specialised training
+
+{{< list training >}}
+
+## Membership
+
+::: alt
+- LISA Consortium - core member
+- LISA DDPC - L3C coordination unit
+- LISA Astrophysics working group
+- GW Space 2050 working group
+:::
+
+## Observational proposals
+
+{{< proposals >}}
+
+## Software skills
+
+{{< list skills >}}
+
+## Languages
+
+{{< list languages >}}

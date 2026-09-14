@@ -1,0 +1,17 @@
+---
+title: "Publications"
+subtitle: "Refereed papers, preprints and proceedings"
+description: "Publications of Alice Perego: refereed papers, preprints and conference proceedings."
+---
+
+## Refereed publications and preprints
+
+{{< bibliography publications.bib >}}
+
+## Proceedings
+
+{{< bibliography proceedings.bib >}}
+
+## Profiles {.special}
+
+[ORCID](https://orcid.org/{{< meta person.orcid >}}){.button}
