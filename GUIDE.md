@@ -4,7 +4,7 @@ How to change any part of the site by editing text files. No HTML, CSS or progra
 
 > **Maintained by Claude Code.** This guide must describe the repository exactly as it is. Claude updates it in the same commit as any structural change. If you notice a mismatch, ask Claude to fix the guide.
 >
-> Last reviewed: 14 September 2026, after the retirement of `setup/` and the first edits (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
+> Last reviewed: 16 September 2026, after the search engine metadata (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
 
 **In short:** personal details in `_metadata.yml`, texts in the `.qmd` pages, CV entries (and the proposals' facts) in `data/`, publications in `publications.bib` and `proceedings.bib`, colours and fonts in `custom.scss`. Never edit `_engine/`.
 
@@ -453,13 +453,19 @@ then add to `index.qmd`, where the section should appear:
 
 ## 15. Search engines and link previews
 
-`_quarto.yml` → `website`:
+What the site already does for search engines: every page has a unique title, a description, a canonical URL and Open Graph tags; the home page carries structured data (schema.org `Person`: name, role, affiliation, email, photo and profile links, all taken from `_metadata.yml`); `sitemap.xml` and `robots.txt` are generated; the 404 page is marked `noindex`.
 
-- `title`: name in the browser tab;
-- `description` and `open-graph → description`: summary used by search engines and link previews of the home page;
-- `open-graph → image`: preview image (`assets/photo.jpg`).
+**Texts you control:**
 
-Each page also has a `description` in its front matter, used for its own search snippet and preview.
+- `_quarto.yml` → `website`: `title` (name in the browser tab and after the page titles), `description` and `open-graph → description` (summary of the home page in search results and link previews), `open-graph → image` (preview image, `assets/photo.jpg`).
+- Each page's front matter: `description` (its own search snippet). The browser-tab title of the home page is "Name – Role" from `_metadata.yml`; the other pages use their `title` followed by the site title.
+- The texts of the pages themselves are what Google reads: the *In a nutshell* and *Research* sections should say who you are and what you work on in plain words (name, position, institute, field). Placeholder text counts against the site until it is replaced.
+
+**Being found for your name** (things to do once, outside the repository):
+
+1. Register the site in [Google Search Console](https://search.google.com/search-console) (URL-prefix property `https://aliperego.github.io/`). For the "HTML tag" verification method, paste the code of the tag into `_metadata.yml` → `seo → google-site-verification` (only the part inside `content="…"`), push, then click *Verify*. Then submit `https://aliperego.github.io/sitemap.xml` under *Sitemaps* and request indexing of the home page under *URL inspection*.
+2. Link to the site from your profiles: ORCID (*Websites & social links*), LinkedIn (*Contact info → Website*), Google Scholar (homepage field), NASA ADS (ORCID-linked), your institute's staff or team page, GitHub. Links from these pages are the strongest signal that the site belongs to you.
+3. Keep `_metadata.yml` → `person` complete (ORCID, LinkedIn, and `github`, `ads`, `scholar` when you have them): they are published as `sameAs` links in the structured data.
 
 ---
 

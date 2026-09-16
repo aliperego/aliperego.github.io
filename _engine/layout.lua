@@ -151,6 +151,109 @@ local function footer(meta)
   return pandoc.Div(columns, pandoc.Attr("contact", { "footer" }, { role = "contentinfo" }))
 end
 
+-- Search engines -------------------------------------------------------------
+
+-- The site configuration of _quarto.yml, parsed like page metadata.
+local function site_config()
+  local text = common.read_file(common.project_path("_quarto.yml")) or ""
+  return pandoc.read("---\n" .. text .. "\n---\n", "markdown").meta
+end
+
+-- Path of the current page on the site ("/" for the home page).
+local function page_path()
+  local rel = pandoc.path.make_relative(quarto.doc.input_file, quarto.project.directory)
+  local out = rel:gsub("%.q?md$", ".html")
+  if out == "index.html" then
+    return "/"
+  end
+  return "/" .. out
+end
+
+-- Structured data describing the owner (schema.org Person), from _metadata.yml.
+local function person_jsonld(meta, base, image)
+  local function value(key)
+    return common.get_string(meta, key)
+  end
+  local person = {
+    ["@context"] = "https://schema.org",
+    ["@type"] = "Person",
+    name = value("person.name"),
+    jobTitle = value("person.role"),
+    url = base .. "/",
+  }
+  if image then
+    person.image = base .. "/" .. image
+  end
+  local email = value("person.email")
+  if email then
+    person.email = "mailto:" .. email
+  end
+  local affiliation = common.get_inlines(meta, "person.affiliation")
+  if affiliation then
+    local organization = { ["@type"] = "Organization", name = pandoc.utils.stringify(affiliation) }
+    affiliation:walk({ Link = function(link)
+      organization.url = organization.url or link.target
+    end })
+    person.affiliation = organization
+  end
+  local profiles = pandoc.List()
+  local orcid = value("person.orcid")
+  if orcid then
+    profiles:insert("https://orcid.org/" .. orcid)
+  end
+  local github = value("person.github")
+  if github then
+    profiles:insert("https://github.com/" .. github)
+  end
+  for _, key in ipairs({ "person.linkedin", "person.ads", "person.scholar" }) do
+    if value(key) then
+      profiles:insert(value(key))
+    end
+  end
+  if #profiles > 0 then
+    person.sameAs = profiles
+  end
+  return pandoc.json.encode(person)
+end
+
+-- Adds to the page head: canonical URL, og:url, author, the Search Console
+-- verification tag, noindex when requested, and the Person data on the home page.
+local function head_tags(meta)
+  local config = site_config()
+  local base = (common.get_string(config, "website.site-url") or ""):gsub("/+$", "")
+  local lines = pandoc.List()
+  if base ~= "" then
+    local url = base .. page_path()
+    lines:insert('<link rel="canonical" href="' .. url .. '">')
+    lines:insert('<meta property="og:url" content="' .. url .. '">')
+  end
+  local name = common.get_string(meta, "person.name")
+  if name then
+    lines:insert('<meta name="author" content="' .. name .. '">')
+  end
+  local verification = common.get_string(meta, "seo.google-site-verification")
+  if verification and verification ~= "" then
+    lines:insert('<meta name="google-site-verification" content="' .. verification .. '">')
+  end
+  if meta.noindex == true then
+    lines:insert('<meta name="robots" content="noindex">')
+  end
+  if meta.hero then
+    -- Browser-tab title of the home page: "Name – Role" (Quarto would otherwise use the site title alone).
+    local role = common.get_string(meta, "person.role")
+    if name and role then
+      meta.pagetitle = name .. " – " .. role
+    end
+    if base ~= "" then
+      local image = common.get_string(config, "website.open-graph.image")
+      lines:insert('<script type="application/ld+json">' .. person_jsonld(meta, base, image) .. "</script>")
+    end
+  end
+  local includes = meta["header-includes"] or pandoc.List()
+  includes:insert(pandoc.RawBlock("html", table.concat(lines, "\n")))
+  meta["header-includes"] = includes
+end
+
 -- Cards ----------------------------------------------------------------------
 
 -- Wraps the content of a spotlight card: text beside a round picture.
@@ -256,6 +359,7 @@ function Pandoc(doc)
     return nil
   end
   local meta = doc.meta
+  head_tags(meta)
   local body = pandoc.List()
   if meta.hero then
     body:insert(hero(meta))

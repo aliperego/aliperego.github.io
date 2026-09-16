@@ -13,6 +13,11 @@ person:
   linkedin: "https://www.linkedin.com/in/alice-p-71408439b/"
   orcid: "0009-0001-0670-2738"
 
+# Search engines. The verification code comes from Google Search Console
+# ("HTML tag" method: only the content="…" part). Leave it empty until then.
+seo:
+  google-site-verification: ""
+
 # The downloadable CV. Keep the file name when you replace the file; update the date.
 cv:
   pdf: "assets/Perego_CV.pdf"
