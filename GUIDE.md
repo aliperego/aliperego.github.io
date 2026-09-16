@@ -453,7 +453,7 @@ then add to `index.qmd`, where the section should appear:
 
 ## 15. Search engines and link previews
 
-What the site already does for search engines: every page has a unique title, a description, a canonical URL and Open Graph tags; the home page carries structured data (schema.org `Person`: name, role, affiliation, email, photo and profile links, all taken from `_metadata.yml`); `sitemap.xml` and `robots.txt` are generated; the 404 page is marked `noindex`.
+The full status and the step-by-step list of what remains to be done are in `SEO.md`. What the site already does for search engines: every page has a unique title, a description, a canonical URL and Open Graph tags; the home page carries structured data (schema.org `Person`: name, role, affiliation, email, photo and profile links, all taken from `_metadata.yml`); `sitemap.xml` and `robots.txt` are generated; the 404 page is marked `noindex`.
 
 **Texts you control:**
 

@@ -19,6 +19,7 @@ The site is built with [Quarto](https://quarto.org) and deployed by GitHub Actio
 | `_engine/`           | Layout filter, shortcodes, bibliography style, styles and scripts |
 | `.github/`           | Publishing workflow and Dependabot configuration               |
 | `GUIDE.md`           | How to edit the site                                           |
+| `SEO.md`             | Search engine status: what is done, what remains to be done    |
 | `PROMPT.md`, `SETUP.md` | Brief and setup instructions used to build the site         |
 
 ## Local preview
