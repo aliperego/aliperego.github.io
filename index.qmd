@@ -1,5 +1,5 @@
 ---
-description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur."
+description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur (Nice, France): LISA mission, ultra-compact double white dwarfs and multi-messenger astrophysics."
 hero:
   # [[TO WRITE: tagline under the name — ~15 words]]
   tagline: "*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.*"

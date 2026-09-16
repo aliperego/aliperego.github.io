@@ -13,13 +13,13 @@ project:
 
 website:
   title: "Alice Perego"
-  description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur."
+  description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur (Nice, France): LISA mission, ultra-compact double white dwarfs and multi-messenger astrophysics."
   site-url: "https://aliperego.github.io"
   favicon: assets/favicon.svg
   search: false
   open-graph:
     image: assets/photo.jpg
-    description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur."
+    description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur (Nice, France): LISA mission, ultra-compact double white dwarfs and multi-messenger astrophysics."
   twitter-card:
     card-style: summary
 

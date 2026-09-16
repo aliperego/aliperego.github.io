@@ -1,7 +1,7 @@
 ---
 title: "Curriculum vitae"
 subtitle: "PhD student in Astrophysics"
-description: "Curriculum vitae of Alice Perego: education, conferences, training, proposals, skills and languages."
+description: "Curriculum vitae of Alice Perego, PhD student in Astrophysics at Observatoire de la Côte d'Azur: education, conferences, training, proposals, skills and languages."
 compact-sections: true
 ---
 

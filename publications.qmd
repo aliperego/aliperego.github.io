@@ -1,7 +1,7 @@
 ---
 title: "Publications"
 subtitle: "Refereed papers, preprints and proceedings"
-description: "Publications of Alice Perego: refereed papers, preprints and conference proceedings."
+description: "Publications of Alice Perego, PhD student in Astrophysics at Observatoire de la Côte d'Azur: refereed papers and preprints on LISA and white dwarf binaries, and conference proceedings."
 ---
 
 ## Refereed publications and preprints
