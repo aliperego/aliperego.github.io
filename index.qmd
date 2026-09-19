@@ -1,19 +1,19 @@
 ---
-description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur (Nice, France): LISA mission, ultra-compact double white dwarfs and multi-messenger astrophysics."
+description: "Alice Perego, PhD student in Astrophysics at Artemis - Observatoire de la Côte d'Azur (Nice, France)"
 hero:
   # [[TO WRITE: tagline under the name — ~15 words]]
-  tagline: "*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.*"
+ tagline: " "
 ---
 
 ## In a nutshell {.spotlight image="assets/photo.jpg" alt="Portrait of Alice Perego"}
 
 <!-- [[TO WRITE: In a nutshell — ~120–150 words]] -->
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum.*
+*Welcome! I am a 3rd-year PhD student in the ARTEMIS group at the Observatoire de la Côte d'Azur in Nice. My research focuses on gravitational-wave astrophysics with space-based detectors (such as LISA), ranging from double white dwarfs in the Milky Way to massive black hole binaries and astrophysical backgrounds. I also study multi-messenger synergies for LISA Galactic binaries with electromagnetic observations. *
 
 - Ph.D. student at Observatoire de la Côte d'Azur - Artemis, Nice, France, since November 2024
 - Supervisors: Nelson Christensen, Astrid Lamberts
-- Thesis: Enabling multi-messenger detections and science of Galactic binaries with LISA
+- Thesis: Future perspectives on gravitational-wave astrophysics with space-based detectors: enabling multi-messenger studies of Galactic binaries
 
 ::: tags
 - LISA mission
@@ -32,24 +32,27 @@ hero:
 
 <!-- [[TO WRITE: Get in touch — ~30 words]] -->
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.*
+*I expect to finish my Ph.D in Fall 2027 and I am starting to explore postdoc opportunities in gravitational-wave and multi-messenger astrophysics. Feel free to reach out if you'd like to collaborate or discuss potential roles!*
 
 [Email](mailto:{{< meta person.email >}}){.button .primary} [CV]({{< meta cv.pdf >}}){.button} [LinkedIn]({{< meta person.linkedin >}}){.button}
 
 ## Research
 
 ::: two-columns
+
 ### Ultra-compact double white dwarfs
 
 <!-- [[TO WRITE: Ultra-compact double white dwarfs — ~150 words]] -->
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.*
+*Within the billions of white dwarfs (WDs) populating the Milky Way, ultra-compact binaries (orbital periods below one hour) offer a unique window on binary evolution, stellar physics and Type Ia Supernova progenitors, while also being a prime target for the upcoming GW detector LISA. My work focuses on bridging LISA detections with electromagnetic observations: I developed a methodology to identify LISA candidates in multiband photometric surveys, based on specific colour features. At present, I am working on simulated LISA and EM catalogs to optimize the cross-matching of multimessenger systems. My work actively contributes to observational strategies, including an ESO proposal for P118 and a large-scale survey proposal with the Canada France Hawaii Telescope (CFHT).*
 
-### Astrophysical foregrounds
+### Astrophysical gravitational-wave backgrounds foregrounds
 
-<!-- [[TO WRITE: Astrophysical foregrounds — ~150 words]] -->
+<!-- [[TO WRITE: Astrophysical gravitational-wave backgrounds — ~150 words]] -->
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.*
+*In addition to individual sources, space-based GW detectors can observe a comulative gravitational-wave background (GWB) generated by a multitude of unresolved systems from the bulk of astrophysical populations. My work involves modeling this signal from  micro-Hertz to deci-Hertz frequencies: I developed a unified framework to perform a self-consistent computation of the astrophysical GWBs generated by a broad set of populations, such as massive black hole binaries, extreme mass-ratio inspirals and stellar-mass binaries. 
+Properly characterizing their amplitude is crucial to correclty quantify the impact on the detector sensitivity and individual source parameter estimation, for LISA and future GW detectors. These results also have direct applications in evaluating the detection of cosmological GWBs.*
+
 :::
 
 ## Proposals
@@ -58,27 +61,41 @@ hero:
 
 <!-- [[TO WRITE: what the proposal aims at — ~100 words; facility, role, status and allocation are listed on the CV page]] -->
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.*
+####PIs : Viraja Khatu, Alice Perego, Damya Souami
+
+*This collaborative proposal has been submitted to the Canada–France–Hawaii Telescope (CFHT) in the context of the scheduled Community Survey, spanning a 6-year period from 2207B to 2033A and offering [400-700] nights. It is organised in 3 working packages centred around core questions in astronomy.
+
+The primary objective of our working package is to initiate a complete and systematic search for EM counterparts of ultra-compact white dwarf binaries (DWDs) in the Northern sky, in preparation for the LISA mission. Taking advantage of the u-band sensitivity of MegaCam, we propose a deep survey of the Galactic plane in u,g,r filters, requiring an observing time ranging from 70 to 200 nights. This effort will yield nearly 10,000 observations of candidate systems, selected by their colours and to be confirmed by subsequent follow-up observations. This can increase the current sample of DWDs as LISA multi-messenger sources by an order of magnitude, maximizing the mission operations and scientific output. Furthermore, by delivering calibrated u, g, and r photometry across all covered fields down to an unprecedented depth ($u$ ~ 24/24.5), the survey will produce a legacy dataset informing stellar evolution, binary interaction, Galactic structure, and population synthesis studies.
+
+Selection results are expected in October 2026.*
+
+### Spectroscopic follow-up of white dwarf binary candidates
+
+####PI: Alice Perego
+
+*This proposal has been submitted in response to ESO Call for Proposal for Period 118.
+
+We will employ UVES to obtain high-resolution spectroscopy of 52 targets from Gaia DR3, pre-filtered through a colour criteria that selects the most promising candidates for compact systems. This will allow to increase the catalogue of electromagnetic counterparts for LISA, extending into unexplored faint magnitudes and refining the strategy for future surveys, while also yielding a valuable dataset for the broader white dwarf community.*
 
 ## Tools I work with
 
-::: two-columns
-### COSMIC
+* **`COSMIC`** | **Binary Population Synthesis**  
+  Rapid suite for generating compact binary populations.
 
-Binary population synthesis
+* **`LISA Analysis Tools` & `GBPU`** | **Galactic Binaries**  
+  LISA Data analysis pipelines for Galactic binary systems.
 
-<!-- [[TO WRITE: how you use COSMIC — ~80 words]] -->
+* **`lisabeta`** | **Massive Black Hole Binaries**  
+  LISA parameter estimation for massive black hole binaries.
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.*
+* **`extrapops`** | **Extra-galactic GW Sources**  
+  Population synthesis and analysis of stellar-origin binary black holes.
 
-### GBGPU
+* **`GWpop_tools`** | **SNR and GWB calculations** [Private Pipeline]  
+  Framework for estimating astrophysical backgrounds and identifying resolved systems across multi-band frequencies (micro-Hz -- deci-Hz).
 
-LISA data analysis
-
-<!-- [[TO WRITE: how you use GBGPU — ~80 words]] -->
-
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.*
-:::
+* **`photocat`** | **WD modelling** [Private Pipeline]  
+  Calculates photometric magnitudes of white dwarfs from theoretical cooling and atmospheric models.
 
 ## Publications and proceedings
 
@@ -90,4 +107,4 @@ LISA data analysis
 
 <!-- [[TO WRITE: Personal interests — ~60–100 words]] -->
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.*
+*In my free time, I enjoy reading (mostly fantasy and detective fiction), practicing origami, and wandering around to explore new surroundings. I love traveling and taking endless photos along the way (though sorting them out later is a different story), hiking in the summer and skiing in the winter.*
