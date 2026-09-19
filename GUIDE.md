@@ -4,7 +4,7 @@ How to change any part of the site by editing text files. No HTML, CSS or progra
 
 > **Maintained by Claude Code.** This guide must describe the repository exactly as it is. Claude updates it in the same commit as any structural change. If you notice a mismatch, ask Claude to fix the guide.
 >
-> Last reviewed: 16 September 2026, after the search engine metadata (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
+> Last reviewed: 19 September 2026 (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
 
 **In short:** personal details in `_metadata.yml`, texts in the `.qmd` pages, CV entries (and the proposals' facts) in `data/`, publications in `publications.bib` and `proceedings.bib`, colours and fonts in `custom.scss`. Never edit `_engine/`.
 
@@ -345,6 +345,17 @@ All data files share one format; `skills.yml` and `languages.yml` use `label` in
 
 {{< list outreach >}}
 ```
+
+### Updating the CV
+
+The page is not generated from the PDF: the two are updated side by side, so that they say the same things.
+
+1. Replace `assets/Perego_CV.pdf`, keeping the name, and set `cv → updated` in `_metadata.yml` (see [Photo, CV and other files](#5-photo-cv-and-other-files)).
+2. Mirror the changes in the files of the table above (copy an existing entry, most recent first).
+3. If they changed elsewhere: position or affiliation in `_metadata.yml → person`; the key facts under *In a nutshell* in `index.qmd`; new papers in the `.bib` files.
+4. In the preview, save `cv.qmd` once so the data files are re-read, check the page, then commit and push.
+
+For a CV with many changes, put the new PDF in a new `setup/` folder (`setup/cv.pdf`, ignored by git) and ask Claude to follow `PROMPT.md`: it imports the changes into the files above and removes the folder.
 
 ---
 
