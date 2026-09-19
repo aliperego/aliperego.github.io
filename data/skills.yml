@@ -11,7 +11,7 @@
   title: "Python, C++"
 
 - label: "Software and codes"
-  title: "Standard scientific Python packages (astrophysics, data analysis, machine learning), COSMIC, lisabeta, GBGPU, extrapops, (population synthesis and GW data analysis), VizieR and Aladin (astronomical dataset and visualisation tools)"
+  title: "Standard scientific Python packages (astrophysics, data analysis, machine learning), COSMIC, lisabeta, GBGPU, extrapops (population synthesis and GW data analysis), VizieR and Aladin (astronomical dataset and visualisation tools)"
 
 - label: "Analysis techniques"
   title: "Frequentist and Bayesian statistical inference"
