@@ -27,7 +27,7 @@ html {
 body {
   background-attachment: fixed;
   background-color: $gradient-end;
-  background-image: linear-gradient(45deg, $gradient-start 15%, $gradient-end 85%);
+  background-image: url("assets/stellar/overlay.png"), linear-gradient(45deg, $gradient-start 15%, $gradient-end 85%);
   min-width: 320px;
 }
 
@@ -168,8 +168,8 @@ p:has(> .button) {
     background: url("#{$hero-pattern-image}") center / cover no-repeat;
     content: "";
     inset: 0;
-    // -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent);
-    // mask-image: radial-gradient(closest-side, #000 55%, transparent);
+    -webkit-mask-image: radial-gradient(closest-side, #000 70%, rgba(0, 0, 0, 0.7));
+    mask-image: radial-gradient(closest-side, #000 70%, rgba(0, 0, 0, 0.7));
     opacity: $hero-pattern-opacity;
     pointer-events: none;
     position: absolute;

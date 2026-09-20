@@ -17,9 +17,9 @@ import astropy.units as u
 import matplotlib.pyplot as plt
 
 WIDTH, HEIGHT = 1600, 900
-HALO_POINTS = 2000      # faint points of the halogit 
-DISC_POINTS = 10000      # faint points of the disc
-BULGE_POINTS = 3000      # faint points of the bulge
+HALO_POINTS = 500      # faint points of the halogit 
+DISC_POINTS = 7000      # faint points of the disc
+BULGE_POINTS = 2500      # faint points of the bulge
 BRIGHT_POINTS = 60      # brighter resolved sources
 SEED = 20260914
 H = 250 #10*pc
