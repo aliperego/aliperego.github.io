@@ -96,64 +96,11 @@ hero:
 
 ## Gallery
 
-```{=html}
-<style>
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  align-items: stretch;
-  margin-top: 1.5rem;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Explicit aspect ratios */
-.img-landscape { aspect-ratio: 4 / 3; }
-.img-square    { aspect-ratio: 1 / 1; }
-
-/* Desktop 3-column span rule */
-@media (min-width: 601px) {
-  .img-tall {
-    grid-row: span 2;
-    aspect-ratio: 3 / 4;
-  }
-  
-  /* Spans image 6 across 2 columns to cleanly close row 2 */
-  .img-wide-bottom {
-    grid-column: span 2;
-    aspect-ratio: 2 / 1;
-  }
-}
-
-/* Mobile 2-column layout */
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-  .img-tall {
-    aspect-ratio: 3 / 4;
-  }
-  .img-wide-bottom {
-    aspect-ratio: 1 / 1;
-  }
-}
-</style>
-
-<div class="gallery-grid">
-  <img src="assets/photo_BD.jpeg" class="img-landscape" alt="BD image">
-  <img src="assets/photo_snow.jpg" class="img-square" alt="Snow image">
-  <img src="assets/photo_ny.JPG" class="img-tall" alt="New York image">
-
-  <img src="assets/photo_conference.jpg" class="img-square" alt="Conference image">
-  <img src="assets/photo_origami.jpg" class="img-square" alt="Origami image">
-  <img src="assets/photo_nice.jpg" class="img-wide-bottom" alt="Nice imaage">
-</div>
+::: {.gallery-grid}
+![](assets/photo_BD.jpg){.img-landscape alt="BD image"}
+![](assets/photo_snow.jpg){.img-square alt="Snow image"}
+![](assets/photo_ny.jpg){.img-tall alt="New York image"}
+![](assets/photo_conference.jpg){.img-square alt="Conference image"}
+![](assets/photo_origami.jpg){.img-square alt="Origami image"}
+![](assets/photo_nice.jpg){.img-wide-bottom alt="Nice image"}
+:::
