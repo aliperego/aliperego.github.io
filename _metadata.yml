@@ -5,7 +5,7 @@
 person:
   name: "Alice Perego"
   role: "PhD student in Astrophysics"
-  affiliation: "[Artemis - Observatoire de la Côte d'Azur](https://www.oca.eu/fr/)"
+  affiliation: "[ARTEMIS -- Observatoire de la Côte d'Azur, Nice, France](https://www.oca.eu/fr/)"
   email: "alice.perego@oca.eu"
   address:
     - "96 Bd de l'Observatoire"

@@ -17,9 +17,9 @@ import astropy.units as u
 import matplotlib.pyplot as plt
 
 WIDTH, HEIGHT = 1600, 900
-HALO_POINTS = 500      # faint points of the halogit 
-DISC_POINTS = 2000      # faint points of the disc
-BULGE_POINTS = 1000      # faint points of the bulge
+HALO_POINTS = 1000      # faint points of the halogit 
+DISC_POINTS = 5000      # faint points of the disc
+BULGE_POINTS = 2000      # faint points of the bulge
 BRIGHT_POINTS = 60      # brighter resolved sources
 SEED = 20260914
 H = 250 #pc
@@ -37,7 +37,7 @@ def F_halo(x,a): #Cumulative function of R**2 * (1+r/a)**(-3.5)
     return (1 + 15/16 * (-2*u**(-1/2) + 4/3*u**(-3/2) - 2/5*u**(-5/2)))
 
 def sample_R_halo(N,a):
-    Rgrid = np.linspace(0,5000,10000) 
+    Rgrid = np.linspace(0,10000,10000) 
     f_inv = interp1d(F_halo(Rgrid,a), Rgrid, kind='linear', fill_value="extrapolate")
     u = np.random.uniform(0, F_halo(max(Rgrid),a), N)
     R = f_inv(u)
@@ -58,7 +58,7 @@ def F_disk(x,H):
 
 def sample_R_disk(N,H):
     Rmin = 0
-    Rmax = 5000
+    Rmax = 10000
     Rgrid = np.linspace(Rmin,Rmax,1000)
     f_inv = interp1d(F_disk(Rgrid,H), Rgrid, kind='linear', fill_value="extrapolate")
     u = np.random.uniform(F_disk(min(Rgrid),H), F_disk(max(Rgrid),H), N)
@@ -83,7 +83,7 @@ def F_bulge(R,R0):
     return -(2/(np.pi**(1/2)))*u*np.exp(-u**2) + special.erf(u)
     
 def sample_R_bulge(N,R0):
-    Rgrid = np.linspace(0,5000,5000)
+    Rgrid = np.linspace(0,10000,5000)
     f_inv = interp1d(F_bulge(Rgrid,R0), Rgrid, kind='linear', fill_value="extrapolate")
     u = np.random.uniform(0, F_bulge(max(Rgrid),R0), N)
     R = f_inv(u)

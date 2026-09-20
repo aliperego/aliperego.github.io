@@ -6,11 +6,12 @@ hero:
 
 ## In a nutshell {.spotlight image="assets/photo.jpg" alt="Portrait of Alice Perego"}
 
-*Welcome! I am a 2nd-year Ph.D. student in the ARTEMIS group at the Observatoire de la Côte d'Azur in Nice. My research focuses on gravitational-wave astrophysics with space-based detectors (LISA), ranging from double white dwarfs in the Milky Way to massive black hole binaries and astrophysical backgrounds. I also study multi-messenger synergies for LISA Galactic binaries with electromagnetic observations. *
+*Welcome! I am a 2nd-year Ph.D. student in the ARTEMIS group at the Observatoire de la Côte d'Azur in Nice, France. My research focuses on gravitational-wave astrophysics with space-based detectors (LISA), ranging from double white dwarfs in the Milky Way to massive black hole binaries and astrophysical backgrounds. I also study multi-messenger synergies for LISA Galactic binaries with electromagnetic observations. *
 
-- Ph.D. student in the Artemis research group at Observatoire de la Côte d'Azur in Nice, France
+- ARTEMIS research group -- Observatoire de la Côte d'Azur (OCA)
+- Université Côte d'Azur, CNRS
 - Supervisors: Nelson Christensen, Astrid Lamberts
-- Thesis title: Future perspectives on gravitational-wave astrophysics with space-based detectors: enabling multi-messenger studies of Galactic binaries
+- Thesis: *Future perspectives on gravitational-wave astrophysics with space-based detectors: enabling multi-messenger studies of Galactic binaries*
 
 ::: tags
 - LISA mission
