@@ -17,15 +17,15 @@ import astropy.units as u
 import matplotlib.pyplot as plt
 
 WIDTH, HEIGHT = 1600, 900
-HALO_POINTS = 1000      # faint points of the halogit 
-DISC_POINTS = 5000      # faint points of the disc
-BULGE_POINTS = 2000      # faint points of the bulge
+HALO_POINTS = 2000      # faint points of the halogit 
+DISC_POINTS = 10000      # faint points of the disc
+BULGE_POINTS = 3000      # faint points of the bulge
 BRIGHT_POINTS = 60      # brighter resolved sources
 SEED = 20260914
-H = 250 #pc
-beta = 30 #pc
-a = 350 #pc
-R0 = 50 #pc
+H = 250 #10*pc
+beta = 30 #10*pc
+a = 350 #10*pc
+R0 = 50 #10*pc
 
 def clip(value, low, high):
     return max(low, min(high, value))

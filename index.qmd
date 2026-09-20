@@ -50,7 +50,7 @@ hero:
 
 #### PIs : Viraja Khatu, Alice Perego, Damya Souami
 
-*This collaborative proposal has been submitted to the Canada France Hawaii Telescope (CFHT) in the context of the scheduled Community Survey, spanning a 6-year period from 2027B to 2033A and offering [400-700] nights. It is organised in 3 working packages centred around core questions in astronomy.*
+*This collaborative proposal has been submitted to the Canada France Hawaii Telescope (CFHT) in the context of the scheduled Community Survey, spanning a 6-year period from 2027B to 2033A and offering [400-700] nights for its wide-field optical imager MegaCam. It is organised in 3 working packages centred around core questions in astronomy.*
 
 *The primary objective of our working package is to initiate a complete and systematic search for EM counterparts of ultra-compact white dwarf binaries (DWDs) in the Northern sky, in preparation for the LISA mission. Taking advantage of the u-band sensitivity of MegaCam, we propose a deep survey of the Galactic plane in u,g,r filters, requiring an observing time ranging from 70 to 200 nights. This effort will yield nearly 10,000 observations of candidate systems, selected by their colours and to be confirmed by subsequent follow-up observations. This can increase the current sample of DWDs as LISA multi-messenger sources by an order of magnitude, maximizing the mission operations and scientific output. Furthermore, by delivering calibrated u, g, and r photometry across all covered fields down to an unprecedented depth ($u$ ~ 24/24.5), the survey will produce a legacy dataset informing stellar evolution, binary interaction, Galactic structure, and population synthesis studies.*
 

@@ -16,7 +16,7 @@ person:
 # Search engines. The verification code comes from Google Search Console
 # ("HTML tag" method: only the content="…" part). Leave it empty until then.
 seo:
-  google-site-verification: ""
+  google-site-verification: "knaF9OBioRbSOYVxjfTVXk5470mX4wOrmYoBPV-mvQs"
 
 # The downloadable CV. Keep the file name when you replace the file; update the date.
 cv:
