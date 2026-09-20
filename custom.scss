@@ -10,13 +10,13 @@ $font-text: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
 
 // Background gradient of the header and footer (start: lighter, end: darker).
 // Keep the start colour dark enough for white text (contrast ≥ 4.5:1).
-$gradient-start: #2777bb;
-$gradient-end: #1f3f7f;
+$gradient-start: #0e72ab; // #2777bb;
+$gradient-end: #090d56; // #1f3f7f;
 
 // Accent colour of buttons, icons and the underline of section titles,
 // and its lighter tone used at the end of the underline.
-$accent: #1f6fb2;
-$accent-light: #8cc9f0;
+$accent: #118fae; //#1f6fb2;
+$accent-light: #9adce8; // #8cc9f0;
 
 // Text colours on the white cards: body text, headings and secondary text.
 $text: #4b5563;

@@ -10,48 +10,147 @@ Standard library only, fixed seed: the output is reproducible.
 
 import math
 import random
+import numpy as np
+from scipy.interpolate import interp1d
+from astropy.coordinates import SkyCoord
+import astropy.units as u
+import matplotlib.pyplot as plt
 
 WIDTH, HEIGHT = 1600, 900
-DISC_POINTS = 1500      # faint points of the disc
-BULGE_POINTS = 500      # faint points of the bulge
+HALO_POINTS = 500      # faint points of the halogit 
+DISC_POINTS = 2000      # faint points of the disc
+BULGE_POINTS = 1000      # faint points of the bulge
 BRIGHT_POINTS = 60      # brighter resolved sources
 SEED = 20260914
-
+H = 250 #pc
+beta = 30 #pc
+a = 350 #pc
+R0 = 50 #pc
 
 def clip(value, low, high):
     return max(low, min(high, value))
 
+################ SKy distribution
+
+def F_halo(x,a): #Cumulative function of R**2 * (1+r/a)**(-3.5)
+    u = 1+x/a
+    return (1 + 15/16 * (-2*u**(-1/2) + 4/3*u**(-3/2) - 2/5*u**(-5/2)))
+
+def sample_R_halo(N,a):
+    Rgrid = np.linspace(0,5000,10000) 
+    f_inv = interp1d(F_halo(Rgrid,a), Rgrid, kind='linear', fill_value="extrapolate")
+    u = np.random.uniform(0, F_halo(max(Rgrid),a), N)
+    R = f_inv(u)
+    return R
+    
+def sample_theta_halo(N):
+# Inverse transform sampling : h(z) = (1/2beta)*sech(z/beta)**2 -> cdf H(z) = (tanh(z/beta)+1)/2-> H^-1(u) = arctanh(2u -1)
+    u = np.random.uniform(0, 1, N)
+    theta = np.arccos(1-2*u)
+    return theta
+def sample_phi_halo(N):
+    u = np.random.uniform(0,1,N)
+    phi = 2*u*np.pi
+    return phi
+    
+def F_disk(x,H):
+    return 1-(1+x/H)*np.exp(-x/H)
+
+def sample_R_disk(N,H):
+    Rmin = 0
+    Rmax = 5000
+    Rgrid = np.linspace(Rmin,Rmax,1000)
+    f_inv = interp1d(F_disk(Rgrid,H), Rgrid, kind='linear', fill_value="extrapolate")
+    u = np.random.uniform(F_disk(min(Rgrid),H), F_disk(max(Rgrid),H), N)
+    R = f_inv(u)
+    return R
+    
+def sample_z_disk(N, beta):
+# Inverse trasnform sampling : h(z) = (1/2beta)*sech(z/beta)**2 -> cdf H(z) = (tanh(z/beta)+1)/2-> H^-1(u) = arctanh(2u -1)
+    u = np.random.uniform(0, 1, N)
+    z = beta * np.arctanh(2*u-1)
+    return z
+def sample_phi_disk(N):
+    phimin = 0*np.pi
+    phimax = 2*np.pi
+    u = np.random.uniform(phimin,phimax,N)
+    phi = u
+    return phi
+    
+from scipy import special
+def F_bulge(R,R0):
+    u = R/R0
+    return -(2/(np.pi**(1/2)))*u*np.exp(-u**2) + special.erf(u)
+    
+def sample_R_bulge(N,R0):
+    Rgrid = np.linspace(0,5000,5000)
+    f_inv = interp1d(F_bulge(Rgrid,R0), Rgrid, kind='linear', fill_value="extrapolate")
+    u = np.random.uniform(0, F_bulge(max(Rgrid),R0), N)
+    R = f_inv(u)
+    return R
+    
+def sample_theta_bulge(N):
+# Inverse trasnform sampling : h(z) = (1/2beta)*sech(z/beta)**2 -> cdf H(z) = (tanh(z/beta)+1)/2-> H^-1(u) = arctanh(2u -1)
+    u = np.random.uniform(0, 1, N)
+    theta = np.arccos(1-2*u)
+    return theta
+def sample_phi_bulge(N):
+    u = np.random.uniform(0,1,N)
+    phi = 2*u*np.pi
+    return phi
 
 def main():
     rng = random.Random(SEED)
     cx, cy = WIDTH / 2, HEIGHT / 2
     points = []
 
-    # Disc: exponential profile along the plane, thin vertically, slightly tilted.
-    tilt = math.radians(-6)
+    for _ in range(HALO_POINTS):
+
+        R = sample_R_halo(1, a)
+        theta = sample_theta_halo(1)
+        phi = sample_phi_halo(1)
+
+        px = cx + R*np.sin(theta)*np.cos(phi)
+        py = cy + R*np.cos(theta)
+
+        radius = rng.uniform(0.8, 2.0)
+        opacity = clip(rng.gauss(0.6, 0.2), 0.15, 0.9)
+        points.append((px, py, radius, opacity)) 
+
     for _ in range(DISC_POINTS):
-        x = rng.expovariate(1 / 380) * rng.choice((-1, 1))
-        y = rng.expovariate(1 / 26) * rng.choice((-1, 1))
-        px = cx + x * math.cos(tilt) - y * math.sin(tilt)
-        py = cy + x * math.sin(tilt) + y * math.cos(tilt)
-        radius = rng.uniform(0.8, 1.8)
-        opacity = clip(rng.gauss(0.55, 0.2), 0.15, 0.9)
+
+        R = sample_R_disk(1,H)
+        z = sample_z_disk(1,beta)
+        phi =  sample_phi_disk(1)
+
+        px = cx + R*np.cos(phi)
+        py = cy + z
+
+        radius = rng.uniform(0.8, 2.0)
+        opacity = clip(rng.gauss(0.6, 0.2), 0.15, 0.9)
         points.append((px, py, radius, opacity))
 
-    # Bulge: round, denser, Gaussian.
+    # Bulge: round, denser
     for _ in range(BULGE_POINTS):
-        px = rng.gauss(cx, 70)
-        py = rng.gauss(cy, 55)
+
+        Rgrid = np.linspace(0,5000,5000)
+        R = sample_R_bulge(1,R0)
+        theta = sample_theta_bulge(1)
+        phi =  sample_phi_bulge(1)
+
+        px = cx + R*np.sin(theta)*np.cos(phi)
+        py = cy + R*np.cos(theta)
+
         radius = rng.uniform(0.8, 2.0)
         opacity = clip(rng.gauss(0.6, 0.2), 0.15, 0.9)
         points.append((px, py, radius, opacity))
 
     # Bright sources: scattered, a little larger, drawn last.
-    for _ in range(BRIGHT_POINTS):
-        px = rng.gauss(cx, 320)
-        py = rng.gauss(cy, 120)
-        radius = rng.uniform(2.2, 3.6)
-        points.append((px, py, radius, 1.0))
+    #for _ in range(BRIGHT_POINTS):
+    #    px = rng.gauss(cx, 320)
+    #    py = rng.gauss(cy, 120)
+    #    radius = rng.uniform(2.2, 3.6)
+    #    points.append((px, py, radius, 1.0))
 
     print(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" '
           'preserveAspectRatio="xMidYMid slice" aria-hidden="true" role="img">')
@@ -59,7 +158,7 @@ def main():
     print('  <g fill="#ffffff">')
     for px, py, radius, opacity in points:
         if 0 <= px <= WIDTH and 0 <= py <= HEIGHT:
-            print(f'<circle cx="{px:.0f}" cy="{py:.0f}" r="{radius:.1f}" fill-opacity="{opacity:.2f}"/>')
+            print(f'<circle cx="{px.item():.0f}" cy="{py.item():.0f}" r="{radius:.1f}" fill-opacity="{opacity:.2f}"/>')
     print("  </g>")
     print("</svg>")
 
