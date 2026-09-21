@@ -63,7 +63,8 @@ $hero-pattern-opacity: 0.4;
 }
 
 
-/* Gallery Grid Layout */
+
+/* Gallery Grid Layout - Explicit 3-Column Grid */
 .gallery-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
@@ -73,25 +74,46 @@ $hero-pattern-opacity: 0.4;
   align-items: stretch !important;
 }
 
-/* Force paragraph wrappers created by Quarto to act as grid cells */
+/* Force paragraph wrappers to act as full-height grid cells */
 .gallery-grid p {
   margin: 0 !important;
   padding: 0 !important;
-  display: flex !important;
+  display: block !important;
   width: 100% !important;
   height: 100% !important;
+  overflow: hidden !important;
 }
 
-/* Handle grid placement on the paragraph cells */
+/* Desktop Grid Placement Rules */
 @media (min-width: 601px) {
-  .gallery-grid p:has(.img-tall) {
-    grid-row: span 2 !important;
+  /* Row 1: Top horizontal picture taking columns 1 and 2 */
+  .gallery-grid p:has(.img-landscape) {
+    grid-column: 1 / span 2 !important;
+    grid-row: 1 !important;
+    aspect-ratio: 14 / 9 !important;
   }
+
+  /* Column 3: Vertical picture spanning rows 1 and 2 */
+  .gallery-grid p:has(.img-tall) {
+    grid-column: 3 !important;
+    grid-row: 1 / span 2 !important;
+    aspect-ratio: 3 / 4 !important;
+  }
+
+  /* Row 3: Bottom horizontal picture taking columns 1 and 2 */
   .gallery-grid p:has(.img-wide-bottom) {
-    grid-column: span 2 !important;
+    grid-column: 1 / span 2 !important;
+    grid-row: 3 !important;
+    aspect-ratio: 2 / 1 !important;
+  }
+
+  /* 1:1 Square images default cell sizing */
+  .gallery-grid p:has(.img-square) {
+    aspect-ratio: 1 / 1 !important;
   }
 }
 
+/* Images fill their respective cell container */
 .gallery-grid img {
   width: 100% !important;
   height: 100% !important;
@@ -102,29 +124,23 @@ $hero-pattern-opacity: 0.4;
   display: block !important;
 }
 
-/* Aspect ratios applied directly to images */
-.img-landscape { aspect-ratio: 4 / 3 !important; }
-.img-square    { aspect-ratio: 1 / 1 !important; }
-
-@media (min-width: 601px) {
-  .img-tall {
-    aspect-ratio: 3 / 4 !important;
-  }
-  .img-wide-bottom {
-    aspect-ratio: 2 / 1 !important;
-  }
-}
-
-/* Mobile adjustments */
+/* Mobile responsive fallback (2 columns) */
 @media (max-width: 600px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px !important;
   }
-  .img-tall {
+  .gallery-grid p:has(.img-landscape),
+  .gallery-grid p:has(.img-wide-bottom) {
+    grid-column: 1 / span 2 !important;
+    aspect-ratio: 14 / 9 !important;
+  }
+  .gallery-grid p:has(.img-tall) {
+    grid-column: auto !important;
+    grid-row: auto !important;
     aspect-ratio: 3 / 4 !important;
   }
-  .img-wide-bottom {
+  .gallery-grid p:has(.img-square) {
     aspect-ratio: 1 / 1 !important;
   }
 }

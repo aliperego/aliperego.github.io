@@ -97,10 +97,17 @@ hero:
 ## Gallery
 
 ::: {.gallery-grid}
+
 ![](assets/photo_BD.jpg){.img-landscape alt="BD image"}
-![](assets/photo_snow.jpg){.img-square alt="Snow image"}
-![](assets/photo_ny.jpg){.img-tall alt="New York image"}
+
 ![](assets/photo_conference.jpg){.img-square alt="Conference image"}
+
+![](assets/photo_ny.jpg){.img-tall alt="New York image"}
+
 ![](assets/photo_origami.jpg){.img-square alt="Origami image"}
+
+![](assets/photo_snow.jpg){.img-square alt="Snow image"}
+
 ![](assets/photo_nice.jpg){.img-wide-bottom alt="Nice image"}
+
 :::
