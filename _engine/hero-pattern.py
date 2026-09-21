@@ -160,22 +160,6 @@ def main():
         if 0 <= px <= WIDTH and 0 <= py <= HEIGHT:
             print(f'<circle cx="{px.item():.0f}" cy="{py.item():.0f}" r="{radius:.1f}" fill-opacity="{opacity:.2f}"/>')
     print("  </g>")
-
-    text_x = WIDTH * 0.65
-    text_y = HEIGHT * 0.85
-
-    line1 = "Representation of LISA's view of the "
-    line2 = "Galactic population of double white dwarfs"
-
-    print(f'  <g transform="translate({text_x}, {text_y})">')
-    print('    <rect x="-130" y="-21" width="260" height="42" rx="6" fill="#002667" fill-opacity="0.4"/>')
-    print('    <text fill="#ffffff" fill-opacity="1" '
-          'font-family="\'Source Sans 3\', sans-serif" font-size="11" font-style="italic" text-anchor="middle">')
-    print(f'      <tspan x="0" y="-8">{line1}</tspan>')
-    print(f'      <tspan x="0" y="12">{line2}</tspan>')
-    print('    </text>')
-    print('  </g>')
-
     print("</svg>")
 
 

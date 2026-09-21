@@ -62,6 +62,10 @@ local function hero(meta)
   end
   blocks:insert(pandoc.Plain({ pandoc.Link({ common.icon("chevron-down"), common.hidden_label("Scroll to the content") },
     "#main", "", { class = "scroll-cue" }) }))
+  local caption = common.get_inlines(meta, "hero.pattern-caption")
+  if caption then
+    blocks:insert(pandoc.Div({ pandoc.Plain(caption) }, { class = "pattern-caption" }))
+  end
   return pandoc.Div(blocks, { id = "header", class = "hero" })
 end
 

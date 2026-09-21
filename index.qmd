@@ -1,7 +1,7 @@
 ---
 description: "Alice Perego, Ph.D. student in Astrophysics at ARTEMIS - Observatoire de la Côte d'Azur (Nice, France)"
 hero:
-
+  pattern-caption: "Representation of LISA's view of the Galactic population of double white dwarfs"
 ---
 
 ## In a nutshell {.spotlight image="assets/photo.jpg" alt="Portrait of Alice Perego"}

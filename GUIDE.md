@@ -230,7 +230,7 @@ File: `index.qmd`. Current order:
 
 | Section             | Where the content is                                                  |
 | ------------------- | --------------------------------------------------------------------- |
-| Header              | name, role, affiliation, buttons and icons from `_metadata.yml`; tagline in the front matter (`hero.tagline`) |
+| Header              | name, role, affiliation, buttons and icons from `_metadata.yml`; tagline and the caption of the background picture in the front matter (`hero` → `tagline`, `pattern-caption`) |
 | In a nutshell       | text, list of key facts and tags of scientific interests in `index.qmd` |
 | Get in touch        | short text and buttons (Email, CV, LinkedIn) in `index.qmd`, section `## Get in touch {.special}`; the header's "Get in touch" button scrolls here |
 | Research            | one `###` block per theme in `index.qmd`, inside `::: two-columns`     |
@@ -408,6 +408,7 @@ The footer's contact block is built from `person`. The HTML5 UP attribution line
 The header of the home page is the gradient (`$gradient-start`, `$gradient-end`), Stellar's grainy texture (`assets/stellar/overlay.png`, also behind the footer) and, behind the name, a faint picture. The picture is drawn to cover the whole header, centred, and faded towards the edges.
 
 - **Use your own picture:** put an SVG, PNG or JPEG in `assets/` (under ~200 KB) and point `$hero-pattern-image` to it, for example `"assets/header-background.jpg"`. It is published with the site. Then set `$hero-pattern-opacity` (0.1–0.2 keeps a light pattern faint; a photograph may need 0.3–0.5). Save `custom.scss` and check in the preview that the white text stays readable.
+- **Caption:** the line at the bottom right of the header (centred under it on phones) is `pattern-caption` under `hero` in the front matter of `index.qmd`; delete the line to remove it.
 - **Hide it:** `$hero-pattern-opacity: 0`.
 - **Regenerate the default pattern** (a scatter of points evoking the Galactic double white dwarfs): edit the parameters at the top of `_engine/hero-pattern.py` (number of points, seed) and run:
 
