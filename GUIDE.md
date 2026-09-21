@@ -4,7 +4,7 @@ How to change any part of the site by editing text files. No HTML, CSS or progra
 
 > **Maintained by Claude Code.** This guide must describe the repository exactly as it is. Claude updates it in the same commit as any structural change. If you notice a mismatch, ask Claude to fix the guide.
 >
-> Last reviewed: 19 September 2026 (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
+> Last reviewed: 22 September 2026 (`structure: one-page`: all sections on the home page, plus the Publications and CV pages).
 
 **In short:** personal details in `_metadata.yml`, texts in the `.qmd` pages, CV entries (and the proposals' facts) in `data/`, publications in `publications.bib` and `proceedings.bib`, colours and fonts in `custom.scss`. Never edit `_engine/`.
 
@@ -405,9 +405,9 @@ The footer's contact block is built from `person`. The HTML5 UP attribution line
 
 ### Home page background
 
-The header of the home page is the gradient (`$gradient-start`, `$gradient-end`), Stellar's grainy texture (`assets/stellar/overlay.png`, also behind the footer) and, behind the name, a faint picture. The picture is drawn to cover the whole header, centred, and faded towards the edges.
+The header of the home page is the gradient (`$gradient-start`, `$gradient-end`), Stellar's grainy texture (`assets/stellar/overlay.png`, also behind the footer) and a picture in the space between the affiliation and the buttons. The picture is centred on that space and sized from it (the drawn galaxy fills it minus a small margin above and below), edge to edge and softly faded at the sides, the same on phones and on wide screens; nothing in it needs adjusting per device.
 
-- **Use your own picture:** put an SVG, PNG or JPEG in `assets/` (under ~200 KB) and point `$hero-pattern-image` to it, for example `"assets/header-background.jpg"`. It is published with the site. Then set `$hero-pattern-opacity` (0.1–0.2 keeps a light pattern faint; a photograph may need 0.3–0.5). Save `custom.scss` and check in the preview that the white text stays readable.
+- **Use your own picture:** put an SVG, PNG or JPEG in `assets/` (under ~200 KB) and point `$hero-pattern-image` to it, for example `"assets/header-background.jpg"`. It is published with the site. Then set `$hero-pattern-opacity` (currently 0.4). A picture whose subject is a horizontal band across the middle, like the default one, fits the space best. Save `custom.scss` and check in the preview that the white text stays readable.
 - **Caption:** the line at the bottom right of the header (centred under it on phones) is `pattern-caption` under `hero` in the front matter of `index.qmd`; delete the line to remove it.
 - **Hide it:** `$hero-pattern-opacity: 0`.
 - **Regenerate the default pattern** (a scatter of points evoking the Galactic double white dwarfs): edit the parameters at the top of `_engine/hero-pattern.py` (number of points, seed) and run:

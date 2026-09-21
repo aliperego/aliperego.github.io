@@ -163,23 +163,49 @@ p:has(> .button) {
   min-height: 92vh;
   min-height: 92svh;
 
-  // Decorative pattern behind the name, faded at the edges.
-  &::before {
-    background: url("#{$hero-pattern-image}") center / cover no-repeat;
-    content: "";
-    inset: 0;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-mask-image: radial-gradient(closest-side, #000 70%, rgba(0, 0, 0, 0.7));
-    mask-image: radial-gradient(closest-side, #000 70%, rgba(0, 0, 0, 0.7));
-    opacity: $hero-pattern-opacity;
-    pointer-events: none;
-    position: absolute;
-  }
-
   > * {
     position: relative;
+    z-index: 1;
+  }
+
+  // The gap between the text block and the buttons. The background picture is centred
+  // on it, so the galaxy sits in the middle of the gap on every screen size; it is
+  // full-bleed, and vignetted so that it never touches the edges.
+  .pattern-space {
+    --gap: clamp(5.5em, 23svh, 18em);
+    height: var(--gap);
+    position: relative;
+    width: 100%;
+    z-index: 0;
+
+    // The picture is sized from the gap, on every screen alike: the drawn galaxy
+    // (the middle 18.4% of the picture's height) fills the gap minus 1em above and
+    // 1em below, so the vertical breathing space is the same everywhere. A second
+    // mask clips the few stray points beyond that band.
+    &::before {
+      background: url("#{$hero-pattern-image}") center / auto 100% no-repeat;
+      content: "";
+      height: calc((var(--gap) - 2em) / 0.184);
+      left: 50%;
+      -webkit-mask-composite: source-in;
+      -webkit-mask-image: radial-gradient(closest-side, #000 70%, rgba(0, 0, 0, 0.7)),
+        linear-gradient(to bottom, transparent 37%, #000 40.5%, #000 59.5%, transparent 63%);
+      mask-composite: intersect;
+      mask-image: radial-gradient(closest-side, #000 70%, rgba(0, 0, 0, 0.7)),
+        linear-gradient(to bottom, transparent 37%, #000 40.5%, #000 59.5%, transparent 63%);
+      opacity: $hero-pattern-opacity;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+    }
+  }
+
+  h1,
+  .role,
+  .affiliation {
+    text-shadow: 0 1px 2px rgba(0, 20, 60, 0.35);
   }
 
   .role,
@@ -196,7 +222,7 @@ p:has(> .button) {
 
   p:has(> .button) {
     justify-content: center;
-    margin: 16em 0 0;
+    margin: 0;
   }
 
   .button {
@@ -235,32 +261,6 @@ p:has(> .button) {
   padding: 0.5em;
 }
 
-#title-block-header {
-  padding: 5em 0 3em;
-
-  .subtitle {
-    font-size: 1.25em;
-    letter-spacing: -0.025em;
-    margin: 0;
-  }
-
-  .description,
-  .quarto-title-meta {
-    display: none;
-  }
-}
-
-// Round icon links (header and footer).
-.icons ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65em;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 // Caption of the background picture, in the manner of a photo credit: small, quiet,
 // aligned with the right edge of the content column; centred under the header on phones.
 #header .pattern-caption {
@@ -288,6 +288,32 @@ p:has(> .button) {
     position: static;
     text-align: center;
   }
+}
+
+#title-block-header {
+  padding: 5em 0 3em;
+
+  .subtitle {
+    font-size: 1.25em;
+    letter-spacing: -0.025em;
+    margin: 0;
+  }
+
+  .description,
+  .quarto-title-meta {
+    display: none;
+  }
+}
+
+// Round icon links (header and footer).
+.icons ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65em;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .icon {
@@ -330,6 +356,14 @@ p:has(> .button) {
   #header {
     min-height: 88vh;
     min-height: 88svh;
+
+    // Narrow screens: the picture keeps the desktop field of view (about 1.25 screen
+    // widths) instead of being zoomed in, so the gap follows the picture's band height
+    // plus the same 1em of space above and below.
+    .pattern-space {
+      --gap: calc(125vw * 9 / 16 * 0.184 + 2em);
+    }
+
 
     .role,
     .affiliation,
@@ -970,9 +1004,23 @@ p:has(> .button) {
     animation: fade-up 0.8s ease backwards;
   }
 
+  #header .pattern-space::before {
+    animation: fade-in 1.6s ease 0.3s backwards;
+  }
+
   .scroll-cue i {
     animation: bounce 2s ease-in-out infinite;
     display: inline-block;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: $hero-pattern-opacity;
   }
 }
 

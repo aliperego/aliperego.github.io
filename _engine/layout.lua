@@ -48,6 +48,8 @@ local function hero(meta)
   if tagline then
     blocks:insert(pandoc.Div({ pandoc.Plain(tagline) }, { class = "tagline" }))
   end
+  -- The space between the text block and the buttons carries the background picture.
+  blocks:insert(pandoc.Div({}, { class = "pattern-space" }))
   local cv = common.get_string(meta, "cv.pdf")
   local buttons = pandoc.List()
   if cv then
