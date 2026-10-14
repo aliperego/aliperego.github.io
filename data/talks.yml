@@ -14,6 +14,12 @@
 #
 # After saving this file, also save the page that shows it (cv.qmd), so the preview updates.
 
+- date: "October 2026"
+  title: "The VI Gravi Gamma Nu workshop"
+  details:
+    - "Milan, Italy"
+    - "Contributed talk"
+    
 - date: "July 2026"
   title: "European Astronomical Society Annual Meeting"
   details:

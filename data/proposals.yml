@@ -16,18 +16,18 @@
 #
 # After saving this file, also save the page that shows it (index.qmd), so the preview updates.
 
-- facility: "CFHT"
-  period: "May 2026"
+- facility: "Canada-France-Hawaii Telescope"
+  period: "2027B-2033A"
   instrument: "Megacam"
-  title: "‘Apapane: Dynamic Sky Across All Scales"
-  role: "PIs: Viraja Khatu, Alice Perego, Damya Souami"
-  status: "Submitted"
-  allocation: "[300-700] nights"
+  title: "Tracing Stellar and Binary Evolution in the Milky Way"
+  role: "PI: Alice Perego"
+  status: "Approved by SAC"
+  allocation: "172 nights"
 
 - facility: "ESO"
-  period: "September 2026"
+  period: "P118 (2027-2028)"
   instrument: "UVES"
-  title: "Spectroscopic follow-up of double white dwarf candidates"
+  title: "Binary white dwarfs: from single systems to a LISA population"
   role: "PI: Alice Perego"
-  status: "Submitted"
+  status: "Allocation pending"
   allocation: "152 hours"
