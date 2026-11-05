@@ -8,6 +8,8 @@ description: "Publications of Alice Perego, PhD student in Astrophysics at Obser
 
 {{< bibliography publications.bib >}}
 
+{{< bibliography publications_contribution.bib >}}
+
 ## Proceedings
 
 {{< bibliography proceedings.bib >}}

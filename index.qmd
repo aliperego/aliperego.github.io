@@ -48,13 +48,13 @@ hero:
 
 ### Tracing Stellar and Binary Evolution in the Milky Way
 
-#### PI: Alice Perego
+#### PI: Alice Perego - recommended for 172 high-quality nights
 
 *This proposal has been submitted to the Canada France Hawaii Telescope (CFHT) in the context of its scheduled Community Survey (CS), spanning a 6-year period from 2027B to 2033A and offering [400-700] nights for its wide-field optical imager MegaCam.*
 
-*The primary objective of our work package is to initiate a complete and systematic search for EM counterparts of ultra-compact white dwarf binaries (DWDs) in the Northern sky, in preparation for the LISA mission. Taking advantage of the u-band sensitivity of MegaCam, we propose a deep survey of the Galactic plane in u,g,r filters, requiring an observing time ranging from 70 to 200 nights. This effort will yield nearly 10,000 observations of candidate systems, selected by their colours and to be confirmed by subsequent follow-up observations. This can increase the current sample of DWDs as LISA multi-messenger sources by an order of magnitude, maximizing the mission operations and scientific output. Furthermore, by delivering calibrated u, g, and r photometry across all covered fields down to an unprecedented depth ($u$ ~ 24/24.5), the survey will produce a legacy dataset informing stellar evolution, binary interaction, Galactic structure, and population synthesis studies.*
+*Between the proposals for the CFHT CS, it has received the highest legacy grade on MegaCam and it has been awarded the 85% of the initial time request. *
 
-*Between the proposals for the CFHT CS, it has received the highest legacy grade on MegaCam. It has been awarded 172 high-quality nights (85% of the initial request). *
+*The primary objective of our work package is to initiate a complete and systematic search for EM counterparts of ultra-compact white dwarf binaries (DWDs) in the Northern sky, in preparation for the LISA mission. Taking advantage of the u-band sensitivity of MegaCam, we propose a deep survey of the Galactic plane in u,g,r filters, requiring an observing time ranging from 70 to 200 nights. This effort will yield nearly 10,000 observations of candidate systems, selected by their colours and to be confirmed by subsequent follow-up observations. This can increase the current sample of DWDs as LISA multi-messenger sources by an order of magnitude, maximizing the mission operations and scientific output. Furthermore, by delivering calibrated u, g, and r photometry across all covered fields down to an unprecedented depth ($u$ ~ 24/24.5), the survey will produce a legacy dataset informing stellar evolution, binary interaction, Galactic structure, and population synthesis studies.*
 
 ### Binary white dwarfs: from single systems to a LISA population
 
@@ -63,6 +63,12 @@ hero:
 *This proposal has been submitted in response to ESO Call for Proposal for Period 118.*
 
 *We will employ UVES to obtain high-resolution spectroscopy of 52 targets from Gaia DR3, pre-filtered through a colour criteria that selects the most promising candidates for compact systems. This will allow to increase the catalogue of electromagnetic counterparts for LISA, extending into unexplored faint magnitudes and refining the strategy for future surveys, while also yielding a valuable dataset for the broader white dwarf community.*
+
+### GUEST (Gravitational Universe Exploration with Satellite Tracking)
+
+#### PI: Diego Blas
+
+*This proposal has been submitted to the ESA F-class call (Step-2 submitted in April 2026). It aims to detect gravitational waves in the microhertz regime, bridging the gap between the future ESA/NASA mission LISA and pulsar-timing arrays (PTA). The concept is novel but simple: exploiting laser-ranging between geocentric satellites in highly-eccentric orbits, acting as a resonant GW detector.
 
 ## Tools I work with
 
@@ -87,6 +93,7 @@ hero:
 ## Publications and proceedings
 
 {{< bibliography publications.bib limit=5 >}}
+{{< bibliography publications_contribution.bib limit=5 >}}
 
 [All publications](publications.qmd){.button .primary} [Proceedings](publications.qmd#proceedings){.button}
 
